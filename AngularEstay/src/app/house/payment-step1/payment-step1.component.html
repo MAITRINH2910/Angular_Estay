@@ -1,0 +1,395 @@
+<body class="body-wrapper ">
+    <div class="main-wrapper">
+
+        <!-- HEADER -->
+        <header>
+            <nav class="navbar navbar-default navbar-main navbar-fixed-top lightHeader " role="navigation">
+                <div class="container">
+
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                        <a class="navbar-brand" href="index.html"></a>
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse navbar-ex1-collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="dropdown singleDrop ">
+                                <a [routerLink]="['/home']" routerLinkActive="router-link-active">Home </a>
+                            </li>
+                            <li class="dropdown singleDrop ">
+                                <a [routerLink]="['/user']" routerLinkActive="router-link-active" role="button" aria-haspopup="true" aria-expanded="false">Account</a>
+                            </li>
+                            <li class="dropdown singleDrop ">
+                                <a [routerLink]="['/auth/sign-in']" routerLinkActive="router-link-active" role="button" aria-haspopup="true" aria-expanded="false">Signin</a>
+                            </li>
+                            <li class="dropdown singleDrop ">
+                                <a [routerLink]="['/auth/sign-up']" routerLinkActive="router-link-active" role="button" aria-haspopup="true" aria-expanded="false">Signup</a>
+                            </li>
+                            <li>
+                                <div class="navbar-btn">
+                                    <a [routerLink]="['/host']" routerLinkActive="router-link-active" type="button" class="btn btn-nav">Become a host</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- PAGE TITLE -->
+        <section class="pageTitle" style="background-image:url(../../assets/img/pages/page-title-bg7.jpg);">
+        </section>
+
+
+        <!-- ====================================
+———	BOOKING SECTION
+===================================== -->
+        <section class="py-8 py-md-10">
+            <div class="container">
+                <div class="mb-8">
+                    <div class="row progress-wizard">
+                        <div class="col-4 progress-wizard-step active">
+                            <div class="progress">
+                                <div class="progress-bar"></div>
+                            </div>
+
+                            <a href="javascript:void(0)" class="progress-wizard-dot">
+                                <div class="progress-wizard-content">
+                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                    <span class="d-block">1. Personal info</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-4 progress-wizard-step incomplete">
+                            <div class="progress">
+                                <div class="progress-bar"></div>
+                            </div>
+
+                            <a href="booking-step-2.html" class="progress-wizard-dot">
+                                <div class="progress-wizard-content">
+                                    <i class="fa fa-usd" aria-hidden="true"></i>
+                                    <span class="d-block">2. Payment info</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-4 progress-wizard-step incomplete">
+                            <div class="progress">
+                                <div class="progress-bar"></div>
+                            </div>
+
+                            <a href="booking-step-3.html" class="progress-wizard-dot">
+                                <div class="progress-wizard-content">
+                                    <i class="fa fa-check" aria-hidden="true"></i>
+                                    <span class="d-block">3. Confirmation</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-7 col-lg-8 order-1 order-md-0">
+                        <h3 class="text-capitalize mb-5">personal info</h3>
+
+                        <form action="" method="post" target="_blank">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="inputName">First Name</label>
+                                        <input type="text" class="form-control border-0 bg-smoke">
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="inputName">Last Name</label>
+                                        <input type="text" class="form-control border-0 bg-smoke">
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="inputName">Adderss 1</label>
+                                        <input type="text" class="form-control border-0 bg-smoke">
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="inputName">Adderss 2</label>
+                                        <input type="text" class="form-control border-0 bg-smoke">
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="inputName">City</label>
+                                        <input type="text" class="form-control border-0 bg-smoke">
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="inputName">Zip Code</label>
+                                        <input type="number" class="form-control border-0 bg-smoke">
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="inputName">State/Region</label>
+                                        <input type="text" class="form-control border-0 bg-smoke">
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="inputName">Country</label>
+                                        <input type="text" class="form-control border-0 bg-smoke">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group mb-5">
+                                <label for="exampleFormControlTextarea1">Requirements</label>
+                                <textarea class="form-control border-0 bg-smoke" rows="7"></textarea>
+                            </div>
+
+                            <div class="form-group form-check mb-9">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1"> I have read and accept the
+                <a href="">terms and conditions</a>
+              </label>
+                            </div>
+
+                            <div class="text-center text-md-left text-lg-right">
+                                <button type="button" onclick="if (!window.__cfRLUnblockHandlers) return false; location.href='booking-step-2.html';" class="btn btn-primary text-uppercase" data-cf-modified-a7337d0031083c273a9e425b-="">
+                Next
+              </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="col-md-5 col-lg-4">
+                        <h3 class="mb-5">Booking Details</h3>
+                        <div class="card bg-smoke mb-6 mb-md-0">
+                            <img class="card-img-top" src="../../../assets/img/pages/booking.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <h6 class="card-title text-dark">Maldives Tour</h6>
+
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item bg-transparent border-top-0 px-0 py-4">
+                                        <span><i class="fa fa-calendar mr-1" aria-hidden="true"></i>From:</span>
+                                        <span class="text-gray-color">25 Mar, 2019</span>
+                                    </li>
+
+                                    <li class="list-group-item bg-transparent px-0 py-4 border-off-white">
+                                        <span><i class="fa fa-calendar mr-1" aria-hidden="true"></i>To:</span>
+                                        <span class="text-gray-color">28 Mar, 2019</span>
+                                    </li>
+
+                                    <li class="list-group-item bg-transparent px-0 py-4 border-off-white">
+                                        <span><i class="fa fa-user mr-1" aria-hidden="true"></i>Guests:</span>
+                                        <span class="text-gray-color">2 Adults, 1Child</span>
+                                    </li>
+
+                                    <li class="list-group-item bg-transparent px-0 py-4 d-none"></li>
+                                </ul>
+                            </div>
+
+                            <div class="card-footer mt-6">
+                                <h2 class="mb-0">
+                                    <span>Total:</span>
+                                    <span class="text-primary font-weight-bold">$6,500</span>
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </div>
+    <!-- element wrapper ends -->
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer clearfix">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-3 col-xs-12">
+                        <div class="footerContent">
+                            <a href="index.html" class="footer-logo"><img src="../../../assets/img/logo-color-sm.png" alt="footer-logo"></a>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                Duis aute </p>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-xs-12">
+                        <div class="footerContent">
+                            <h5>contact us</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod.</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fa fa-home" aria-hidden="true"></i>61 Park Street, Fifth Avenue, NY</li>
+                                <li><i class="fa fa-phone" aria-hidden="true"></i>[88] 657 524 332</li>
+                                <li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="mailTo:info@star-travel.com">info@star-travel.com</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-xs-12">
+                        <div class="footerContent imgGallery">
+                            <h5>Gallery</h5>
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    <a class="fancybox-pop" href="img/home/gallery/gallery-1.jpg"><img src="../../../assets/img/home/gallery/thumb-gallery-1.jpg" alt="image"></a>
+                                </div>
+                                <div class="col-xs-4">
+                                    <a class="fancybox-pop" href="img/home/gallery/gallery-2.jpg"><img src="../../../assets/img/home/gallery/thumb-gallery-2.jpg" alt="image"></a>
+                                </div>
+                                <div class="col-xs-4">
+                                    <a class="fancybox-pop" href="img/home/gallery/gallery-3.jpg"><img src="../../../assets/img/home/gallery/thumb-gallery-3.jpg" alt="image"></a>
+                                </div>
+                                <div class="col-xs-4">
+                                    <a class="fancybox-pop" href="img/home/gallery/gallery-4.jpg"><img src="../../../assets/img/home/gallery/thumb-gallery-4.jpg" alt="image"></a>
+                                </div>
+                                <div class="col-xs-4">
+                                    <a class="fancybox-pop" href="img/home/gallery/gallery-5.jpg"><img src="../../../assets/img/home/gallery/thumb-gallery-5.jpg" alt="image"></a>
+                                </div>
+                                <div class="col-xs-4">
+                                    <a class="fancybox-pop" href="img/home/gallery/gallery-6.jpg"><img src="../../../assets/img/home/gallery/thumb-gallery-6.jpg" alt="image"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-xs-12">
+                        <div class="footerContent">
+                            <h5>newsletter</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do. </p>
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Enter your email" aria-describedby="basic-addon21">
+                                <span class="input-group-addon" id="basic-addon21"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></span>
+                            </div>
+                            <ul class="list-inline">
+                                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyRight clearfix">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-sm-push-6 col-xs-12">
+                        <ul class="list-inline">
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Support</a></li>
+                            <li><a href="#">Blog</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-sm-pull-6 col-xs-12">
+                        <div class="copyRightText">
+                            <p>Copyright © 2019. All Rights Reserved by <a target="_blank" href="http://www.iamabdus.com/">me</a>.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Signup Modal -->
+    <div class="modal fade signupLoging" id="signup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content modalContentCustom">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Create your account</h4>
+                </div>
+                <div class="modal-body">
+                    <form method="post" action="">
+                        <div class="form-group">
+                            <input type="text" class="form-control bg-ash" id="exampleInputEmail1" placeholder="Full Name">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control bg-ash" id="exampleInputPassword1" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control bg-ash" id="exampleInputPassword1" placeholder="Password">
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                  <input type="checkbox"> I agree to the terms of use and privacy.
+                </label>
+                        </div>
+                        <button type="submit" class="btn btn-default">Login</button>
+                    </form>
+                    <div class="or">
+                        or
+                    </div>
+                    <a class="btn btn-default btnSocial" href="#">Log in with facebook</a>
+                </div>
+
+                <div class="modal-footer">
+                    <div class="dontHaveAccount">
+                        <p>Don’t have an Account?<a href=""> Sign up</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div class="modal fade signupLoging" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content modalContentCustom">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Log in to your account</h4>
+                </div>
+                <div class="modal-body">
+                    <form method="post" action="">
+                        <div class="form-group">
+                            <input type="email" class="form-control bg-ash" id="exampleInputPassword1" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control bg-ash" id="exampleInputPassword1" placeholder="Password">
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                  <input type="checkbox"> Remember me
+                </label>
+                            <a class="forgotPass clerfix" href="">Fogot Password?</a>
+                        </div>
+                        <button type="submit" class="btn btn-default">Login</button>
+                    </form>
+                    <div class="or">
+                        or
+                    </div>
+                    <a class="btn btn-default btnSocial" href="#">Log in with facebook</a>
+                </div>
+
+                <div class="modal-footer">
+                    <div class="dontHaveAccount">
+                        <p>Don’t have an Account?<a href=""> Sign up</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../../../assets/options/optionswitcher.js" type="f6b41c082078a1e081ceb95d-text/javascript"></script>
+    <script src="https://ajax.cloudflare.com/cdn-cgi/scripts/95c75768/cloudflare-static/rocket-loader.min.js" data-cf-settings="f6b41c082078a1e081ceb95d-|49" defer=""></script>
+</body>

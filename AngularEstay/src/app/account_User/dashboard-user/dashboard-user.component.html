@@ -1,0 +1,402 @@
+<body>
+
+    <!--====== LOADER =====-->
+    <!-- <div class="loader"></div> -->
+
+    <!--========== COLOR-PANEL ==========-->
+    <!-- <div id="colorPanel" class="colorPanel">
+        <a id="cpToggle" href="#"></a>
+        <ul></ul>
+    </div> -->
+    <!-- end colorPanel -->
+
+    <!--========== PAGE-COVER =========-->
+    <header>
+        <nav class="navbar navbar-default navbar-main   lightHeader " role="navigation">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+                    <a class="navbar-brand" [routerLink]="['/']" routerLinkActive="router-link-active"></a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse navbar-ex1-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown singleDrop active">
+                            <a [routerLink]="['/']" routerLinkActive="router-link-active" class="dropdown-toggle" data-toggle="dropdown">Home</a
+          >
+        </li>
+        <li class="dropdown singleDrop ">
+          <a
+            [routerLink]="['/me/dashboard']"
+            routerLinkActive="router-link-active"
+            class="dropdown-toggle"
+            data-toggle="dropdown"
+            >Account</a
+          >
+         
+        </li>
+        <li class="dropdown singleDrop ">
+          <a
+            [routerLink]="['/users/login']" routerLinkActive="router-link-active" 
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+            >Sign In</a
+          >
+        </li>
+        <li class="dropdown singleDrop ">
+          <a
+            [routerLink]="['/users/register']" routerLinkActive="router-link-active" 
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+            >Sign Up</a
+          >
+        </li>
+        <li>
+          <div class="navbar-btn">
+            <a
+              class="btn btn-nav"
+              [routerLink]="['/host']"
+              routerLinkActive="router-link-active"
+              type="button"
+              >Become a host</a
+            >
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</header>
+    <!-- end page-cover -->
+
+
+    <!--===== INNERPAGE-WRAPPER ====-->
+    <section class="innerpage-wrapper">
+        <div id="dashboard" class="innerpage-section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="dashboard-heading">
+                            <h2>Travel <span>Profile</span></h2>
+                            <p>Hi Lisa, Welcome to Star Travels!</p>
+                            <p>All your trips booked with us will appear here and you'll be able to manage everything!</p>
+                        </div>
+                        <!-- end dashboard-heading -->
+
+                        <div class="dashboard-wrapper">
+                            <div class="row">
+
+                                <div class="col-xs-12 col-sm-2 col-md-2 dashboard-nav">
+                                    <ul class="nav nav-tabs nav-stacked text-center">
+                                        <li class="active"><a href="#"><span><i class="fa fa-cogs"></i></span>Dashboard</a></li>
+                        <li><a [routerLink]="['/me/profile']" routerLinkActive="router-link-active"><span><i class="fa fa-user"></i></span>Profile</a></li>
+                        <li><a [routerLink]="['/me/booking']" routerLinkActive="router-link-active"><span><i class="fa fa-briefcase"></i></span>Booking</a></li>
+                    </ul>
+                </div>
+                <!-- end columns -->
+
+                <div class="col-xs-12 col-sm-10 col-md-10 dashboard-content">
+                    <h2 class="dash-content-title">Total Traveled</h2>
+                    <div class="row info-stat">
+
+                        <div class="col-sm-6 col-md-3">
+                            <div class="stat-block">
+                                <span><i class="fa fa-tachometer"></i></span>
+                                <h3>1548</h3>
+                                <p>Miles</p>
+                            </div>
+                            <!-- end stat-block -->
+                        </div>
+                        <!-- end columns -->
+
+                        <div class="col-sm-6 col-md-3">
+                            <div class="stat-block">
+                                <span><i class="fa fa-globe"></i></span>
+                                <h3>12%</h3>
+                                <p>World</p>
+                            </div>
+                            <!-- end stat-block -->
+                        </div>
+                        <!-- end columns -->
+
+                        <div class="col-sm-6 col-md-3">
+                            <div class="stat-block">
+                                <span><i class="fa fa-building"></i></span>
+                                <h3>312</h3>
+                                <p>Cities</p>
+                            </div>
+                            <!-- end stat-block -->
+                        </div>
+                        <!-- end columns -->
+
+                        <div class="col-sm-6 col-md-3">
+                            <div class="stat-block">
+                                <span><i class="fa fa-paper-plane"></i></span>
+                                <h3>102</h3>
+                                <p>Trips</p>
+                            </div>
+                            <!-- end stat-block -->
+                        </div>
+                        <!-- end columns -->
+
+                    </div>
+                    <!-- end row -->
+
+                    <div class="dashboard-listing invoices">
+                        <h3 class="dash-listing-heading">Invoices</h3>
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <tbody>
+                                    <tr>
+                                        <td class="dash-list-icon invoice-icon"><i class="fa fa-bars"></i></td>
+                                        <td class="dash-list-text invoice-text">
+                                            <h4 class="invoice-title">Professional Plan</h4>
+                                            <ul class="list-unstyled list-inline invoice-info">
+                                                <li class="invoice-status red">Unpaid</li>
+                                                <li class="invoice-order"> Order: #00214</li>
+                                                <li class="invoice-date"> Date: 25/08/2017</li>
+                                            </ul>
+                                        </td>
+                                        <td class="dash-list-btn"><button class="btn btn-orange">View Invoice</button></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="dash-list-icon invoice-icon"><i class="fa fa-bars"></i></td>
+                                        <td class="dash-list-text invoice-text">
+                                            <h4>Extended Plan</h4>
+                                            <ul class="list-unstyled list-inline invoice-info">
+                                                <li class="invoice-status green">Paid</li>
+                                                <li class="invoice-order"> Order: #00214</li>
+                                                <li class="invoice-date"> Date: 25/08/2017</li>
+                                            </ul>
+                                        </td>
+                                        <td class="dash-list-btn"><button class="btn btn-orange">View Invoice</button></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="dash-list-icon invoice-icon"><i class="fa fa-bars"></i></td>
+                                        <td class="dash-list-text invoice-text">
+                                            <h4>Extended Plan</h4>
+                                            <ul class="list-unstyled list-inline invoice-info">
+                                                <li class="invoice-status red">Unpaid</li>
+                                                <li class="invoice-order"> Order: #00214</li>
+                                                <li class="invoice-date"> Date: 25/08/2017</li>
+                                            </ul>
+                                        </td>
+                                        <td class="dash-list-btn"><button class="btn btn-orange">View Invoice</button></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="dash-list-icon invoice-icon"><i class="fa fa-bars"></i></td>
+                                        <td class="dash-list-text invoice-text">
+                                            <h4>Basic Plan</h4>
+                                            <ul class="list-unstyled list-inline invoice-info">
+                                                <li class="invoice-status red">Unpaid</li>
+                                                <li class="invoice-order"> Order: #00214</li>
+                                                <li class="invoice-date"> Date: 25/08/2017</li>
+                                            </ul>
+                                        </td>
+                                        <td class="dash-list-btn"><button class="btn btn-orange">View Invoice</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- end table-responsive -->
+                    </div>
+                    <!-- end invoices -->
+                </div>
+                <!-- end columns -->
+
+            </div>
+            <!-- end row -->
+            </div>
+            <!-- end dashboard-wrapper -->
+            </div>
+            <!-- end columns -->
+            </div>
+            <!-- end row -->
+            </div>
+            <!-- end container -->
+            </div>
+            <!-- end dashboard -->
+            </section>
+            <!-- end innerpage-wrapper -->
+
+            <!--======================= FOOTER =======================-->
+            <footer>
+                <div class="footer clearfix">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-3 col-xs-12">
+                                <div class="footerContent">
+                                    <a href="index.html" class="footer-logo"><img src="../../../assets/img/logo-color-sm.png" alt="footer-logo" /></a>
+                                    <p>
+
+                                        Star Travel is currently the # 1 online booking platform in Vietnam. Accompanying us, you have trips full of experience. With Star Travel, booking accommodation, resort villas, hotels, private houses, apartments ... becomes fast, convenient and easy.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 col-xs-12">
+                                <div class="footerContent">
+                                    <h5>contact us</h5>
+                                    <ul class="list-unstyled">
+                                        <li>
+                                            <i class="fa fa-home" aria-hidden="true"></i>54 Nguyen Luong Bang, Lien Chieu, Da Nang
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-phone" aria-hidden="true"></i>[84] 12 345 6789
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-envelope-o" aria-hidden="true"></i
+      ><a href="mailTo:info@star-travel.com"
+      >info@star-travel.com</a
+      >
+      </li>
+      </ul>
+                    </div>
+                  </div>
+                  <div class="col-sm-3 col-xs-12">
+                    <div class="footerContent imgGallery">
+                      <h5>Gallery</h5>
+                      <div class="row">
+                        <div class="col-xs-4">
+                          <a
+                            class="fancybox-pop"
+                            href="img/home/gallery/gallery-1.jpg"
+                            ><img
+                              src="../../../assets/img/home/gallery/thumb-gallery-1.jpg"
+                              alt="image"
+                          /></a>
+                        </div>
+                        <div class="col-xs-4">
+                          <a
+                            class="fancybox-pop"
+                            href="img/home/gallery/gallery-2.jpg"
+                            ><img
+                              src="../../../assets/img/home/gallery/thumb-gallery-2.jpg"
+                              alt="image"
+                          /></a>
+                        </div>
+                        <div class="col-xs-4">
+                          <a
+                            class="fancybox-pop"
+                            href="img/home/gallery/gallery-3.jpg"
+                            ><img
+                              src="../../../assets/img/home/gallery/thumb-gallery-3.jpg"
+                              alt="image"
+                          /></a>
+                        </div>
+                        <div class="col-xs-4">
+                          <a
+                            class="fancybox-pop"
+                            href="img/home/gallery/gallery-4.jpg"
+                            ><img
+                              src="../../../assets/img/home/gallery/thumb-gallery-4.jpg"
+                              alt="image"
+                          /></a>
+                        </div>
+                        <div class="col-xs-4">
+                          <a
+                            class="fancybox-pop"
+                            href="img/home/gallery/gallery-5.jpg"
+                            ><img
+                              src="../../../assets/img/home/gallery/thumb-gallery-5.jpg"
+                              alt="image"
+                          /></a>
+                        </div>
+                        <div class="col-xs-4">
+                          <a
+                            class="fancybox-pop"
+                            href="img/home/gallery/gallery-6.jpg"
+                            ><img
+                              src="../../../assets/img/home/gallery/thumb-gallery-6.jpg"
+                              alt="image"
+                          /></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-3 col-xs-12">
+                    <div class="footerContent">
+                      <h5>newsletter</h5>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit sed
+                        do.
+                      </p>
+                      <div class="input-group">
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="Enter your email"
+                          aria-describedby="basic-addon21"
+                        />
+                        <span class="input-group-addon" id="basic-addon21"
+                          ><i class="fa fa-long-arrow-right" aria-hidden="true"></i
+                        ></span>
+                      </div>
+                      <ul class="list-inline">
+                        <li>
+                          <a href="#"
+                            ><i class="fa fa-facebook" aria-hidden="true"></i
+                          ></a>
+                        </li>
+                        <li>
+                          <a href="#"
+                            ><i class="fa fa-twitter" aria-hidden="true"></i
+                          ></a>
+                        </li>
+                        <li>
+                          <a href="#"
+                            ><i class="fa fa-google-plus" aria-hidden="true"></i
+                          ></a>
+                        </li>
+                        <li>
+                          <a href="#"
+                            ><i class="fa fa-pinterest-p" aria-hidden="true"></i
+                          ></a>
+                        </li>
+                        <li>
+                          <a href="#"
+                            ><i class="fa fa-vimeo" aria-hidden="true"></i
+                          ></a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="copyRight clearfix">
+              <div class="container">
+                <div class="row">
+                  <div class="col-sm-6 col-sm-push-6 col-xs-12">
+                    <ul class="list-inline">
+                      <li><a href="#">Privacy Policy</a></li>
+                      <li><a href="#">About Us</a></li>
+                      <li><a href="#">Support</a></li>
+                      <li><a href="#">Blog</a></li>
+                    </ul>
+                  </div>
+                  <div class="col-sm-6 col-sm-pull-6 col-xs-12">
+                    <div class="copyRightText">
+                      <p>
+                        Copyright © 2019. All Rights Reserved by
+                        <a target="_blank" href="http://www.iamabdus.com/">me</a>.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </footer>
+    <!-- end footer -->
+</body>
