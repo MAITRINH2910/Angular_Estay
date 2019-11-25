@@ -8,24 +8,23 @@ import { SignUpInfo } from 'src/app/model/signup-info';
   styleUrls: ["./register.component.css"]
 })
 export class RegisterComponent implements OnInit {
+ 
   form: any = {};
   signupInfo: SignUpInfo;
   isSignedUp = false;
   isSignUpFailed = false;
-  errorMessage = "";
+  errorMessage = '';
 
-  constructor(private authService: AuthUserService) {}
+  constructor(private authService: AuthUserService) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   onSubmit() {
     console.log(this.form);
 
     this.signupInfo = new SignUpInfo(
-      this.form.fullName,
-      this.form.email,
-      this.form.password
-    );
+      this.form.username,
+      this.form.password);
 
     this.authService.signUp(this.signupInfo).subscribe(
       data => {

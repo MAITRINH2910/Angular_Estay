@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthUserService } from 'src/app/service/auth-user.service';
 
 @Component({
   selector: 'app-host',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HostComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authService: AuthUserService,  ) {}
 
   ngOnInit() {
+  }
+
+  logout() {
+    this.authService.logout();
   }
 
 }

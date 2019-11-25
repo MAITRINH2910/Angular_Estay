@@ -48,12 +48,12 @@ export class ListHouseGirdComponent implements OnInit {
       .map((v, i) => (v ? this.listFeature[i] : null))
       .filter(v => v !== null);
     console.log(selectedListFeatureIds);
-    this.predictedHotel = this.cityService.getPredictedHotelByFeature(this.city, selectedListFeatureIds).subscribe(data=>{
-      this.predictedHotel = data;
-      this.predictedHotel = this.predictedHotel.response;
-      console.log(this.predictedHotel);
+    // this.predictedHotel = this.cityService.getPredictedHotelByFeature(this.city, selectedListFeatureIds).subscribe(data=>{
+    //   this.predictedHotel = data;
+    //   this.predictedHotel = this.predictedHotel.response;
+    //   console.log(this.predictedHotel);
 
-    })
+    // })
     // this.router.navigate(["/predicted-hotel"]);
   }
   ngOnDestroy() {

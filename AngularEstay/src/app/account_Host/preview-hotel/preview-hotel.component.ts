@@ -1,25 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { House } from 'src/app/model/house.model';
 import { HouseService } from 'src/app/service/house.service';
 import { AuthUserService } from 'src/app/service/auth-user.service';
+import { Hotel } from 'src/app/model/hotel.model';
 
 @Component({
-  selector: 'app-property',
-  templateUrl: './property.component.html',
-  styleUrls: ['./property.component.css']
+  selector: 'app-preview-hotel',
+  templateUrl: './preview-hotel.component.html',
+  styleUrls: ['./preview-hotel.component.css']
 })
-export class PropertyComponent implements OnInit {
+export class PreviewHotelComponent implements OnInit {
 
   sub: Subscription;
-  houses: House[];
+  listHotel: Hotel[];
   constructor(private houseService: HouseService, private authService: AuthUserService) { }
 
   ngOnInit() {
     this.authService.getUser().subscribe(data=>{
       let userId = data.id;
-      this.sub = this.houseService.getAllHousesByUserId(userId).subscribe((data: House[])=> {
-        this.houses = data;
+      this.sub = this.houseService.getAllHousesByUserId(userId).subscribe((data: Hotel[])=> {
+        this.listHotel = data;
       })
     }) 
   }

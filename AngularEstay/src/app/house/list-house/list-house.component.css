@@ -1295,7 +1295,7 @@ a:focus {
 .priceRange .price-slider-inner .amount-wrapper input {
     background-color: transparent;
     border: 0;
-    width: 28%;
+    width: 33%;
     font-size: 14px;
     color: #262a2e;
     font-weight: 700;
@@ -5435,7 +5435,7 @@ header {
 .bodyRight {
     display: inline-block;
     float: left;
-    width: 70%
+    width: 67%
 }
 
 @media(max-width:767px) {
@@ -5462,7 +5462,7 @@ header {
 @media(min-width:1200px) {
     .bodyLeft,
     .bodyRight {
-        width: 70%
+        width: 63%
     }
 }
 
@@ -5514,7 +5514,7 @@ header {
 
 @media(min-width:1200px) {
     .bodyRight {
-        width: 28%
+        width: 37%
     }
 }
 
@@ -10926,7 +10926,7 @@ header {
 
 @media(min-width:992px) {
     .recentActivitySection .listingsTable .rowItem .priceTd {
-        width: 30%
+        width: 33%
     }
 }
 

@@ -1,744 +1,457 @@
-<body class="body-wrapper ">
-    <div class="main-wrapper">
-
-        <!-- HEADER -->
-        <header>
-            <nav class="navbar navbar-default navbar-main navbar-fixed-top lightHeader " role="navigation">
-                <div class="container">
-
-                    <!-- Brand and toggle get grouped for better mobile display -->
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                  <span class="sr-only">Toggle navigation</span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                </button>
-                        <a class="navbar-brand" href="index.html"></a>
-                    </div>
-
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse navbar-ex1-collapse">
-                        <ul class="nav navbar-nav navbar-right">
-                            <li class="dropdown singleDrop ">
-                                <a [routerLink]="['/home']" routerLinkActive="router-link-active">Home </a>
-                            </li>
-                            <li class="dropdown singleDrop ">
-                                <a [routerLink]="['/user']" routerLinkActive="router-link-active" role="button" aria-haspopup="true" aria-expanded="false">Account</a>
-                            </li>
-                            <li class="dropdown singleDrop ">
-                                <a [routerLink]="['/auth/sign-in']" routerLinkActive="router-link-active" role="button" aria-haspopup="true" aria-expanded="false">Signin</a>
-                            </li>
-                            <li class="dropdown singleDrop ">
-                                <a [routerLink]="['/auth/sign-up']" routerLinkActive="router-link-active" role="button" aria-haspopup="true" aria-expanded="false">Signup</a>
-                            </li>
-                            <li>
-                                <div class="navbar-btn">
-                                    <a [routerLink]="['/host']" routerLinkActive="router-link-active" type="button" class="btn btn-nav">Become a host</a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </header>
-
-        <!-- PAGE TITLE -->
-        <section class="pageTitle" style="background-image:url(../../assets/img/pages/page-title-bg12.jpg);">
-        </section>
-
-        <!-- PAGE CONTENT -->
-        <!-- ====================================
-        ———	PACKAGES SECTION
-        ===================================== -->
-        <section class="py-10">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-5 col-lg-4 order-2 order-md-0">
-                        <form class="" action="index.html" method="GET">
-                            <div class="card border">
-                                <h2 class="card-header text-uppercase text-center bg-smoke border-bottom">
-                                    Check availability
-                                </h2>
-
-                                <div class="card-body px-3 py-4">
-                                    <div class="border-bottom mb-5">
-                                        <div class="form-group mb-5">
-                                            <div class="row">
-                                                <label for="inputTime" class="col-xl-5 col-form-label text-center text-xl-right px-2">Check in:</label>
-
-                                                <div class="col-xl-7">
-                                                    <div class="form-group form-group-icon form-group-icon-category-2 mb-0">
-                                                        <i class="fa fa-calendar" aria-hidden="true"></i>
-                                                        <input type="text" class="form-control daterange-picker-category-2" name="dateRange" value="" placeholder="MM/DD/YYYY">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group mb-5">
-                                            <div class="row">
-                                                <label for="inputTime" class="col-xl-5 col-form-label text-center text-xl-right px-2">Check out:</label>
-
-                                                <div class="col-xl-7">
-                                                    <div class="form-group form-group-icon form-group-icon-category-2 mb-0">
-                                                        <i class="fa fa-calendar" aria-hidden="true"></i>
-                                                        <input type="text" class="form-control daterange-picker-category-2" name="dateRange" value="" placeholder="MM/DD/YYYY">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group mb-5">
-                                            <div class="row">
-                                                <label for="inputText" class="col-xl-5 col-form-label text-center text-xl-right px-2">Rooms type:</label>
-                                                <div class="col-xl-7">
-                                                    <div class="form-group mb-0">
-                                                        <div class="select-default select-category-2">
-                                                            <select class="select-option">
-                                    <option>Select Room</option>
-                                    <option>Double Room</option>
-                                    <option>Single Room</option>
-                                  </select>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group mb-5">
-                                            <div class="row align-items-center">
-                                                <label class="control-label col-xl-5 text-center text-xl-right">Guest:</label>
-
-                                                <div class="col-xl-5">
-                                                    <div class="count-input mx-auto">
-                                                        <a class="incr-btn" data-action="decrease" href="#">–</a>
-                                                        <input class="quantity" type="number" value="1">
-                                                        <a class="incr-btn" data-action="increase" href="#">+</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="d-flex justify-content-between border-bottom mb-5 pb-5">
-                                        <span class="text-uppercase h4 mb-0">Total cost</span>
-                                        <span class="font-weight-bold text-primary h3 mb-0">$198</span>
-                                    </div>
-
-                                    <div class="text-center px-4">
-                                        <button type="button" onclick="if (!window.__cfRLUnblockHandlers) return false; location.href='booking-step-1.html';" class="btn btn-hover btn-lg btn-block btn-outline-secondary text-uppercase" data-cf-modified-657fa495229bdb3a961a448d-="">
-                          Check Now <span class="ml-4"><i class="fa fa-angle-right" aria-hidden="true"></i></span>
-                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-
-                    <div class="col-md-7 col-lg-8">
-                        <div id="package-slider" class="owl-carousel owl-theme package-slider">
-                            <div class="item">
-                                <img src="assets/img/holets/hotel-slider-03.jpg" alt="image">
-                            </div>
-
-                            <div class="item">
-                                <img src="assets/img/holets/hotel-slider-01.jpg" alt="image">
-                            </div>
-
-                            <div class="item">
-                                <img src="assets/img/holets/hotel-slider-02.jpg" alt="image">
-                            </div>
-                        </div>
-
-                        <div class="mt-8">
-                            <h2 class="text-uppercase mb-5">Description</h2>
-                            <p class="mb-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip commodo consequat.
-                                Duis aute irure dolor in reprehenderit</p>
-
-                            <div class="mb-5">
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <ul class="list-unstyled mb-0">
-                                            <li class="media">
-                                                <div class="text-gray-color mr-2">
-                                                    <i class="fa fa-dot-circle-o" aria-hidden="true"></i>
-                                                </div>
-                                                <div class="media-body">
-                                                    <p>Cras tincidunt mi a sodales pulvinar.</p>
-                                                </div>
-                                            </li>
-
-                                            <li class="media">
-                                                <div class="text-gray-color mr-2">
-                                                    <i class="fa fa-dot-circle-o" aria-hidden="true"></i>
-                                                </div>
-                                                <div class="media-body">
-                                                    <p>Mauris in libero sodales ultrices purus</p>
-                                                </div>
-                                            </li>
-
-                                            <li class="media">
-                                                <div class="text-gray-color mr-2">
-                                                    <i class="fa fa-dot-circle-o" aria-hidden="true"></i>
-                                                </div>
-                                                <div class="media-body">
-                                                    <p>Quisque vulputate enim eu fringilla.</p>
-                                                </div>
-                                            </li>
-
-                                            <li class="media">
-                                                <div class="text-gray-color mr-2">
-                                                    <i class="fa fa-dot-circle-o" aria-hidden="true"></i>
-                                                </div>
-                                                <div class="media-body">
-                                                    <p>Eleifend mi vel nisl lobortis nec tincidunt</p>
-                                                </div>
-                                            </li>
-
-                                            <li class="media">
-                                                <div class="text-gray-color mr-2">
-                                                    <i class="fa fa-dot-circle-o" aria-hidden="true"></i>
-                                                </div>
-                                                <div class="media-body">
-                                                    <p>Mauris in libero sodales ultrices purus</p>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-
-                                    <div class="col-lg-6">
-                                        <ul class="list-unstyled mb-0">
-                                            <li class="media">
-                                                <div class="text-gray-color mr-2">
-                                                    <i class="fa fa-dot-circle-o" aria-hidden="true"></i>
-                                                </div>
-                                                <div class="media-body">
-                                                    <p>Praesent nec nisl iaculis, pulvinar nunc.</p>
-                                                </div>
-                                            </li>
-
-                                            <li class="media">
-                                                <div class="text-gray-color mr-2">
-                                                    <i class="fa fa-dot-circle-o" aria-hidden="true"></i>
-                                                </div>
-                                                <div class="media-body">
-                                                    <p>Sed at erat lacinia, condimentum eros non</p>
-                                                </div>
-                                            </li>
-
-                                            <li class="media">
-                                                <div class="text-gray-color mr-2">
-                                                    <i class="fa fa-dot-circle-o" aria-hidden="true"></i>
-                                                </div>
-                                                <div class="media-body">
-                                                    <p>Mauris in libero sodales ultrices purus at</p>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="mb-6">
-                            <h2 class="text-uppercase mb-5">Rooms types</h2>
-                            <p class="mb-5">Pellen tesque vitae ultrices magna. Cras vul putate commodo justo. Fusce vitae justo efficitur, condi mentum ante a, tempor velit. Proin portt itor tortor</p>
-                        </div>
-
-                        <div class="mb-6 border-bottom">
-                            <h4 class="text-uppercase mb-5">Double Room</h4>
-                            <p class="">Consuat sed libero eu feugiat. Praesent vel hendrerit erat. Phasellus gravida efficitur lectus, placerat semper est tristique nec. Proin magna enim, nunc ultricies dui sit amet, consectetur adipisicing elit, sed do eiusmod
-                                tempor incididunt ut labore et dolore magna aliqua</p>
-
-                            <div class="d-md-flex justify-content-between align-items-center mb-5">
-                                <ul class="list-unstyled d-flex flex-wrap justify-content-center justify-content-md-start font-weight-medium mb-md-0">
-                                    <li class="">
-                                        <a href="" class="text-gray-color hover-text-primary mr-4">
-                                            <img class="mr-2" src="assets/img/packages/shape-icon-1.png" alt="Image">Breakfast
-                                        </a>
-                                    </li>
-
-                                    <li class="">
-                                        <a href="" class="text-gray-color hover-text-primary mr-4">
-                                            <img class="mr-2" src="assets/img/packages/shape-icon-2.png" alt="Image">Plasma TV
-                                        </a>
-                                    </li>
-
-                                    <li class="">
-                                        <a href="" class="text-gray-color hover-text-primary">
-                                            <img class="mr-2" src="assets/img/packages/shape-icon-3.png" alt="Image">Free wifi
-                                        </a>
-                                    </li>
-                                </ul>
-
-                                <h5 class="text-center text-lg-left">
-                                    <span class="text-gray-color font-weight-bold text-capitalize">Par night:</span>
-                                    <span class="text-primary font-weight-bold">$150</span>
-                                </h5>
-                            </div>
-
-                            <div class="px-lg-2 pb-3">
-                                <div class="row">
-                                    <div class="col-6 col-md-4 col-lg mb-2 pr-1 px-lg-1">
-                                        <div class="media img-overlay">
-                                            <div class="media-content w-100">
-                                                <img class="media-img rounded w-100" src="assets/img/packages/double-room-img1.jpg" alt="Generic placeholder image">
-                                                <a href="assets/img/holets/hotel-list-01.jpg" data-fancybox="gallery" class="hover-img-overlay-dark"></a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-6 col-md-4 col-lg mb-2 pl-1 px-md-2 px-lg-1">
-                                        <div class="media img-overlay">
-                                            <div class="media-content w-100">
-                                                <img class="media-img rounded w-100" src="assets/img/packages/double-room-img2.jpg" alt="Generic placeholder image">
-                                                <a href="assets/img/holets/hotel-list-02.jpg" data-fancybox="gallery" class="hover-img-overlay-dark"></a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-6 col-md-4 col-lg mb-2 pr-1 pr-md-3 pl-md-1 px-lg-1">
-                                        <div class="media img-overlay">
-                                            <div class="media-content w-100">
-                                                <img class="media-img rounded w-100" src="assets/img/packages/double-room-img3.jpg" alt="Generic placeholder image">
-                                                <a href="assets/img/holets/hotel-list-03.jpg" data-fancybox="gallery" class="hover-img-overlay-dark"></a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-6 col-md-4 col-lg mb-2 pl-1 pl-md-3 pr-md-1 px-lg-1">
-                                        <div class="media img-overlay">
-                                            <div class="media-content w-100">
-                                                <img class="media-img rounded w-100" src="assets/img/packages/double-room-img4.jpg" alt="Generic placeholder image">
-                                                <a href="assets/img/holets/hotel-list-04.jpg" data-fancybox="gallery" class="hover-img-overlay-dark"></a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-6 col-md-4 col-lg mb-2 pr-1 px-md-2 px-lg-1">
-                                        <div class="media img-overlay">
-                                            <div class="media-content w-100">
-                                                <img class="media-img rounded w-100" src="assets/img/packages/double-room-img5.jpg" alt="Generic placeholder image">
-                                                <a href="assets/img/holets/hotel-list-05.jpg" data-fancybox="gallery" class="hover-img-overlay-dark"></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="mb-8 border-bottom">
-                            <h4 class="text-uppercase mb-5">Single Room</h4>
-                            <p class="">Donec phareta nec quam congue egestas. Sed aliquam mauris quam, id molestie erat tristique vel. Donec euismod malesuada rhoncus. Nulla vestibulum Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip
-                                commodo consequat, duis aute</p>
-
-                            <div class="d-md-flex justify-content-between align-items-center mb-5">
-                                <ul class="list-unstyled d-flex flex-wrap justify-content-center justify-content-md-start font-weight-medium mb-md-0">
-                                    <li class="">
-                                        <a href="" class="text-gray-color hover-text-primary mr-4">
-                                            <img class="mr-2" src="assets/img/packages/shape-icon-1.png" alt="Image">Breakfast
-                                        </a>
-                                    </li>
-
-                                    <li class="">
-                                        <a href="" class="text-gray-color hover-text-primary mr-4">
-                                            <img class="mr-2" src="assets/img/packages/shape-icon-2.png" alt="Image">Plasma TV
-                                        </a>
-                                    </li>
-
-                                    <li class="">
-                                        <a href="" class="text-gray-color hover-text-primary">
-                                            <img class="mr-2" src="assets/img/packages/shape-icon-3.png" alt="Image">Free wifi
-                                        </a>
-                                    </li>
-                                </ul>
-
-                                <h5 class="text-center text-lg-left">
-                                    <span class="text-gray-color font-weight-bold text-capitalize">Par night:</span>
-                                    <span class="text-primary font-weight-bold">$100</span>
-                                </h5>
-                            </div>
-
-                            <div class="px-lg-2 pb-3">
-                                <div class="row">
-                                    <div class="col-6 col-md-4 col-lg mb-2 pr-1 px-lg-1">
-                                        <div class="media img-overlay">
-                                            <div class="media-content w-100">
-                                                <img class="media-img rounded w-100" src="assets/img/packages/single-room-img1.jpg" alt="Generic placeholder image">
-                                                <a href="assets/img/holets/hotel-list-01.jpg" data-fancybox="gallery" class="hover-img-overlay-dark"></a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-6 col-md-4 col-lg mb-2 pl-1 px-md-2 px-lg-1">
-                                        <div class="media img-overlay">
-                                            <div class="media-content w-100">
-                                                <img class="media-img rounded w-100" src="assets/img/packages/single-room-img2.jpg" alt="Generic placeholder image">
-                                                <a href="assets/img/holets/hotel-list-02.jpg" data-fancybox="gallery" class="hover-img-overlay-dark"></a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-6 col-md-4 col-lg mb-2 pr-1 pr-md-3 pl-md-1 px-lg-1">
-                                        <div class="media img-overlay">
-                                            <div class="media-content w-100">
-                                                <img class="media-img rounded w-100" src="assets/img/packages/single-room-img3.jpg" alt="Generic placeholder image">
-                                                <a href="assets/img/holets/hotel-list-03.jpg" data-fancybox="gallery" class="hover-img-overlay-dark"></a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-6 col-md-4 col-lg mb-2 pl-1 pl-md-3 pr-md-1 px-lg-1">
-                                        <div class="media img-overlay">
-                                            <div class="media-content w-100">
-                                                <img class="media-img rounded w-100" src="assets/img/packages/single-room-img4.jpg" alt="Generic placeholder image">
-                                                <a href="assets/img/holets/hotel-list-04.jpg" data-fancybox="gallery" class="hover-img-overlay-dark"></a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-6 col-md-4 col-lg mb-2 pr-1 px-md-2 px-lg-1">
-                                        <div class="media img-overlay">
-                                            <div class="media-content w-100">
-                                                <img class="media-img rounded w-100" src="assets/img/packages/single-room-img5.jpg" alt="Generic placeholder image">
-                                                <a href="assets/img/holets/hotel-list-05.jpg" data-fancybox="gallery" class="hover-img-overlay-dark"></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="mb-7">
-                            <h2 class="text-uppercase mb-6">Location</h2>
-                            <p class="mb-0">Pellen tesque vitae ultrices magna. Cras vul putate commodo justo. Fusce vitae justo efficitur, condi mentum ante a, tempor velit. Proin portt itor tortor.</p>
-                        </div>
-
-                        <div class="mb-7" id="map" style="width:100%; height:400px;"></div>
-
-                        <div class="mb-7">
-                            <h2 class="text-uppercase mb-6">Reviews</h2>
-                            <p class="mb-6">Pulla consuat sed libero eu feugiat. Praesent vel hendrerit erat. Phasellus gravida efficitur lectus, placerat semper est tristique nec. Proin magna enim</p>
-
-                            <div class="d-flex align-items-center mb-6">
-                                <h3 class="text-uppercase mb-0">
-                                    <span class="mr-2">Reviews (3)</span>
-
-                                    <span class="text-warning">
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star-half-o" aria-hidden="true"></i>
-                      </span>
-                                </h3>
-                            </div>
-
-                            <div class="media mb-6">
-                                <a class="mr-6" href="">
-                                    <img class="rounded" src="assets/img/blog/comments-02.jpg" alt="Generic placeholder image">
-                                </a>
-
-                                <div class="media-body">
-                                    <h5>Samanta Doe</h5>
-                                    <span class="star add-rating-default pb-1"></span>
-                                    <p class="mb-0">Pellen tesque vitae ultrices magna. Cras vul putate commodo justo. Fusce vitae justo efficitur, condi mentum ante.</p>
-                                </div>
-                            </div>
-
-                            <div class="media mb-6">
-                                <a class="mr-6" href="">
-                                    <img class="rounded" src="assets/img/blog/comments-01.jpg" alt="Generic placeholder image">
-                                </a>
-
-                                <div class="media-body">
-                                    <h5>Amanda Smith</h5>
-                                    <span class="star add-rating-default pb-1"></span>
-                                    <p class="mb-0">Nunc ultricies dui sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="media">
-                                <a class="mr-6" href="">
-                                    <img class="rounded" src="assets/img/blog/comments-03.jpg" alt="Generic placeholder image">
-                                </a>
-                                <div class="media-body">
-                                    <h5>Rodney Artichoke</h5>
-                                    <span class="star add-rating-default pb-1"></span>
-                                    <p class="mb-0">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudan totam rem ape riam</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <form class="mb-9 mb-md-0">
-                            <h3 class="text-uppercase mb-6">Leave your review</h3>
-
-                            <p class="rating-view d-flex align-items-center">
-                                <span class="content-view">Want to Rate it?</span>
-                                <span class="star add-rating-default ml-2"></span>
-                            </p>
-
-                            <div class="form-group mb-6">
-                                <textarea class="form-control border-0 bg-smoke" placeholder="Comment" rows="6"></textarea>
-                            </div>
-
-                            <div class="">
-                                <button type="button" onclick="if (!window.__cfRLUnblockHandlers) return false; location.href='javascript:void(0)';" class="btn btn-hover btn-outline-secondary text-uppercase" data-cf-modified-657fa495229bdb3a961a448d-="">
-                      Submit
-                    </button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ====================================
-        ———	PACKAGES LIKE SECTION
-        ===================================== -->
-        <section class="pb-10">
-            <div class="container">
-                <div class="text-uppercase mb-4">
-                    <h2 class="mb-0">you may also like</h2>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
-                        <div class="card card-bg">
-                            <a href="" class="position-relative">
-                                <img class="card-img-top" src="assets/img/holets/hotel-list-01.jpg" alt="Card image cap">
-                                <div class="card-img-overlay card-hover-overlay rounded-top d-flex flex-column">
-                                    <ul class="list-unstyled d-flex mt-auto text-warning mb-1">
-                                        <li>
-                                            <i class="fa fa-star mr-1" aria-hidden="true"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-star mr-1" aria-hidden="true"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-star mr-1" aria-hidden="true"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-star mr-1" aria-hidden="true"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-star-o" aria-hidden="true"></i>
-                                        </li>
-                                    </ul>
-                                    <h6 class="text-white font-weight-bold">4 Review</h6>
-                                </div>
-                            </a>
-
-                            <div class="card-body">
-                                <h5>
-                                    <a href="" class="card-title text-uppercase">The London Hotel</a>
-                                </h5>
-
-                                <p class="mb-7">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore aliqua.
-                                </p>
-
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <p class="mb-0 text-capitalize">Start from</p>
-                                        <h3 class="text-primary">$40</h3>
-                                    </div>
-
-                                    <div>
-                                        <a href="booking-step-1.html" class="btn btn-xs btn-outline-secondary text-uppercase">Book now</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
-                        <div class="card card-bg">
-                            <a href="" class="position-relative">
-                                <img class="card-img-top" src="assets/img/holets/hotel-list-02.jpg" alt="Card image cap">
-                                <div class="card-img-overlay card-hover-overlay rounded-top d-flex flex-column">
-                                    <ul class="list-unstyled d-flex mt-auto text-warning mb-1">
-                                        <li>
-                                            <i class="fa fa-star mr-1" aria-hidden="true"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-star mr-1" aria-hidden="true"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-star mr-1" aria-hidden="true"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-star-o mr-1" aria-hidden="true"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-star-o" aria-hidden="true"></i>
-                                        </li>
-                                    </ul>
-                                    <h6 class="text-white font-weight-bold">3 Review</h6>
-                                </div>
-                            </a>
-
-                            <div class="card-body">
-                                <h5>
-                                    <a href="" class="card-title text-uppercase">The Europe Hotel</a>
-                                </h5>
-
-                                <p class="mb-7">Integer purus ex, dictum nec elementum eu, tristique vel lectus. Donec rutrum lectus et pharetra egestas.</p>
-
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <p class="mb-0 text-capitalize">Start from</p>
-                                        <h3 class="text-primary">$35</h3>
-                                    </div>
-
-                                    <div>
-                                        <a href="booking-step-1.html" class="btn btn-xs btn-outline-secondary text-uppercase">Book now</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-4">
-                        <div class="card card-bg">
-                            <a href="" class="position-relative">
-                                <img class="card-img-top" src="assets/img/holets/hotel-list-03.jpg" alt="Card image cap">
-                                <div class="card-img-overlay card-hover-overlay rounded-top d-flex flex-column">
-                                    <ul class="list-unstyled d-flex mt-auto text-warning mb-1">
-                                        <li>
-                                            <i class="fa fa-star mr-1" aria-hidden="true"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-star mr-1" aria-hidden="true"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-star mr-1" aria-hidden="true"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-star mr-1" aria-hidden="true"></i>
-                                        </li>
-                                        <li>
-                                            <i class="fa fa-star" aria-hidden="true"></i>
-                                        </li>
-                                    </ul>
-                                    <h6 class="text-white font-weight-bold">5 Review</h6>
-                                </div>
-                            </a>
-
-                            <div class="card-body">
-                                <h5>
-                                    <a href="" class="card-title text-uppercase">The Rookery Hotel</a>
-                                </h5>
-
-                                <p class="mb-7">Sed ut perspi ciatis unde omnis iste natus error volu ptatem accusantium unde omnis iste doloremque laudan totam</p>
-
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div>
-                                        <p class="mb-0 text-capitalize">Start from</p>
-                                        <h3 class="text-primary">$30</h3>
-                                    </div>
-
-                                    <div>
-                                        <a href="booking-step-1.html" class="btn btn-xs btn-outline-secondary text-uppercase">Book now</a>
-                                    </div>
-                                </div>
-                            </div>
+<!-- PAGE TITLE -->
+<section class="pageTitle" style="background-image:url(../../../assets/img/pages/page-title-bg12.jpg);">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="titleTable">
+                    <div class="titleTableInner">
+                        <div class="pageTitleInfo">
+                            <h1>Marriott Hotel</h1>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-
-
+        </div>
     </div>
-    <!-- element wrapper ends -->
+</section>
 
-    <!-- FOOTER -->
-    <footer>
-        <div class="footer clearfix">
-            <div class="container">
+<!-- PAGE CONTENT -->
+<section class="mainContentSection singleHotel">
+    <div class="container">
+        <div class="row ">
+            <div class="col-sm-8 col-xs-12">
                 <div class="row">
-                    <div class="col-sm-3 col-xs-12">
-                        <div class="footerContent">
-                            <a href="index.html" class="footer-logo"><img src="../../../assets/img/logo-color-sm.png" alt="footer-logo"></a>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                Duis aute </p>
+                    <div class="col-xs-12">
+                        <div id="package-carousel" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="#package-carousel" data-slide-to="0" class=""></li>
+                                <li data-target="#package-carousel" data-slide-to="1" class=""></li>
+                                <li data-target="#package-carousel" data-slide-to="2" class="active"></li>
+                            </ol>
+                            <div class="carousel-inner">
+                                <div class="item">
+                                    <img alt="First slide" src="img/holets/hotel-slider-01.jpg">
+                                </div>
+                                <div class="item">
+                                    <img alt="Second slide" src="img/holets/hotel-slider-02.jpg">
+                                </div>
+                                <div class="item active">
+                                    <img alt="Third slide" src="img/holets/hotel-slider-03.jpg">
+                                </div>
+                            </div>
+                            <a class="left carousel-control" href="#package-carousel" data-slide="prev"><span class="glyphicon glyphicon-menu-left"></span></a>
+                            <a class="right carousel-control" href="#package-carousel" data-slide="next"><span class="glyphicon glyphicon-menu-right"></span></a>
                         </div>
                     </div>
-                    <div class="col-sm-3 col-xs-12">
-                        <div class="footerContent">
-                            <h5>contact us</h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod.</p>
-                            <ul class="list-unstyled">
-                                <li><i class="fa fa-home" aria-hidden="true"></i>61 Park Street, Fifth Avenue, NY</li>
-                                <li><i class="fa fa-phone" aria-hidden="true"></i>[88] 657 524 332</li>
-                                <li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="mailTo:info@star-travel.com">info@star-travel.com</a></li>
-                            </ul>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="description-aria">
+                            <div class="sectionTitle2">
+                                <h2>description</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip commodo consequat.
+                                    Duis aute irure dolor in reprehenderit</p>
+                            </div>
+
                         </div>
                     </div>
-                    <div class="col-sm-3 col-xs-12">
-                        <div class="footerContent imgGallery">
-                            <h5>Gallery</h5>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="rooms-types-aria">
+                            <div class="sectionTitle2">
+                                <h2>rooms types</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+                            </div>
+                            <div class="roomCategory">
+                                <div class="sub-title">
+                                    <h4>Double Room</h4>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip commodo
+                                        consequat. Duis aute irure dolor in reprehenderit</p>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-9">
+                                        <ul class="roomAdvantage">
+                                            <li>
+                                                <a href="#"><img src="img/packages/shape-icon-1.png" alt="Image">Breakfast</a>
+                                            </li>
+                                            <li>
+                                                <a href="#"><img src="img/packages/shape-icon-2.png" alt="Image">Plasma TV</a>
+                                            </li>
+                                            <li>
+                                                <a href="#"><img src="img/packages/shape-icon-3.png" alt="Image">Free wifi</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3">
+                                        <div class="roomRate">
+                                            Per Night: <span>$150</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="roomGellary">
+                                    <div class="single-item">
+                                        <a class="fancybox-pop" rel="portfolio-1" href="img/holets/hotel-list-01.jpg">
+                                            <img src="img/holets/hotel-list-01.jpg" alt="Double Room">
+                                        </a>
+                                    </div>
+                                    <div class="single-item">
+                                        <a class="fancybox-pop" rel="portfolio-1" href="img/holets/hotel-list-02.jpg">
+                                            <img src="img/holets/hotel-list-02.jpg" alt="Double Room">
+                                        </a>
+                                    </div>
+                                    <div class="single-item">
+                                        <a class="fancybox-pop" rel="portfolio-1" href="img/holets/hotel-list-03.jpg">
+                                            <img src="img/holets/hotel-list-03.jpg" alt="Double Room">
+                                        </a>
+                                    </div>
+                                    <div class="single-item">
+                                        <a class="fancybox-pop" rel="portfolio-1" href="img/holets/hotel-list-04.jpg">
+                                            <img src="img/holets/hotel-list-04.jpg" alt="Double Room">
+                                        </a>
+                                    </div>
+                                    <div class="single-item">
+                                        <a class="fancybox-pop" rel="portfolio-1" href="img/holets/hotel-list-05.jpg">
+                                            <img src="img/holets/hotel-list-05.jpg" alt="Double Room">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="roomCategory">
+                                <div class="sub-title">
+                                    <h4>Single Room</h4>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip commodo
+                                        consequat. Duis aute irure dolor in reprehenderit</p>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-9">
+                                        <ul class="roomAdvantage">
+                                            <li>
+                                                <a href="#"><img src="img/packages/shape-icon-1.png" alt="Image">Breakfast</a>
+                                            </li>
+                                            <li>
+                                                <a href="#"><img src="img/packages/shape-icon-2.png" alt="Image">Plasma TV</a>
+                                            </li>
+                                            <li>
+                                                <a href="#"><img src="img/packages/shape-icon-3.png" alt="Image">Free wifi</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-3">
+                                        <div class="roomRate">
+                                            Per Night: <span>$150</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="roomGellary">
+                                    <div class="single-item">
+                                        <a class="fancybox-pop" rel="portfolio-1" href="img/holets/hotel-list-03.jpg">
+                                            <img src="img/holets/hotel-list-03.jpg" alt="Double Room">
+                                        </a>
+                                    </div>
+                                    <div class="single-item">
+                                        <a class="fancybox-pop" rel="portfolio-1" href="img/holets/hotel-list-06.jpg">
+                                            <img src="img/holets/hotel-list-06.jpg" alt="Double Room">
+                                        </a>
+                                    </div>
+                                    <div class="single-item">
+                                        <a class="fancybox-pop" rel="portfolio-1" href="img/holets/hotel-list-07.jpg">
+                                            <img src="img/holets/hotel-list-07.jpg" alt="Double Room">
+                                        </a>
+                                    </div>
+                                    <div class="single-item">
+                                        <a class="fancybox-pop" rel="portfolio-1" href="img/holets/hotel-list-08.jpg">
+                                            <img src="img/holets/hotel-list-08.jpg" alt="Double Room">
+                                        </a>
+                                    </div>
+                                    <div class="single-item">
+                                        <a class="fancybox-pop" rel="portfolio-1" href="img/holets/hotel-list-09.jpg">
+                                            <img src="img/holets/hotel-list-09.jpg" alt="Double Room">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="location-aria">
+                            <div class="sectionTitle2">
+                                <h2>Location</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+                            </div>
+                            <div class="google-maps">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12097.002861286059!2d-74.01154310416635!3d40.71249695811257!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew+York%2C+NY!5e0!3m2!1sen!2s!4v1502716241862"
+                                    width="100%" height="400px" scrolling="no" frameborder="0" style="border:0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="review-aria">
+                            <div class="sectionTitle2">
+                                <h2>Reviews</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+                            </div>
+                            <div class="reviewContent">
+                                <h3 class="reviewTitle">
+                                    Reviews (3)
+                                    <span>
+                          <i class="fa fa-star" aria-hidden="true"></i>
+                          <i class="fa fa-star" aria-hidden="true"></i>
+                          <i class="fa fa-star" aria-hidden="true"></i>
+                          <i class="fa fa-star" aria-hidden="true"></i>
+                          <i class="fa fa-star-o" aria-hidden="true"></i>
+                        </span>
+                                </h3>
+
+                                <div class="reviewMedia">
+                                    <ul class="media-list">
+                                        <li class="media">
+                                            <div class="media-left">
+                                                <a href="#">
+                                                    <img class="media-object" src="../../../assets/img/blog/comments-02.jpg" alt="Image">
+                                                </a>
+                                            </div>
+                                            <div class="media-body">
+                                                <h5 class="media-heading">Jessica Brown</h5>
+                                                <span>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                            </span>
+                                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudan totam rem ape riam</p>
+                                            </div>
+                                        </li>
+                                        <li class="media">
+                                            <div class="media-left">
+                                                <a href="#">
+                                                    <img class="media-object" src="../../../assets/img/blog/comments-01.jpg" alt="Image">
+                                                </a>
+                                            </div>
+                                            <div class="media-body">
+                                                <h5 class="media-heading">Jessica Brown</h5>
+                                                <span>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" aria-hidden="true"></i>
+                            </span>
+                                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudan totam rem ape riam</p>
+                                            </div>
+                                        </li>
+                                        <li class="media">
+                                            <div class="media-left">
+                                                <a href="#">
+                                                    <img class="media-object" src="../../../assets/img/blog/comments-03.jpg" alt="Image">
+                                                </a>
+                                            </div>
+                                            <div class="media-body">
+                                                <h5 class="media-heading">Jessica Brown</h5>
+                                                <span>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" aria-hidden="true"></i>
+                              <i class="fa fa-star-0" aria-hidden="true"></i>
+                              <i class="fa fa-star-o" aria-hidden="true"></i>
+                            </span>
+                                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudan totam rem ape riam</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <form action="" method="POST" role="form" class="commentsForm">
+                                    <h3 class="reviewTitle">Leave your review</h3>
+                                    <p>Want to Rate it? <span>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                        <i class="fa fa-star-0" aria-hidden="true"></i>
+                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                      </span></p>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class="form-group">
+                                                <textarea class="form-control" rows="3" placeholder="Comment"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn buttonCustomPrimary">submit</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <aside class="col-sm-4 col-xs-12">
+                <div class="singleCartSidebar">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Check availability</div>
+                        <div class="panel-body">
                             <div class="row">
-                                <div class="col-xs-4">
-                                    <a class="fancybox-pop" href="img/home/gallery/gallery-1.jpg"><img src="../../../assets/img/home/gallery/thumb-gallery-1.jpg" alt="image"></a>
-                                </div>
-                                <div class="col-xs-4">
-                                    <a class="fancybox-pop" href="img/home/gallery/gallery-2.jpg"><img src="../../../assets/img/home/gallery/thumb-gallery-2.jpg" alt="image"></a>
-                                </div>
-                                <div class="col-xs-4">
-                                    <a class="fancybox-pop" href="img/home/gallery/gallery-3.jpg"><img src="../../../assets/img/home/gallery/thumb-gallery-3.jpg" alt="image"></a>
-                                </div>
-                                <div class="col-xs-4">
-                                    <a class="fancybox-pop" href="img/home/gallery/gallery-4.jpg"><img src="../../../assets/img/home/gallery/thumb-gallery-4.jpg" alt="image"></a>
-                                </div>
-                                <div class="col-xs-4">
-                                    <a class="fancybox-pop" href="img/home/gallery/gallery-5.jpg"><img src="../../../assets/img/home/gallery/thumb-gallery-5.jpg" alt="image"></a>
-                                </div>
-                                <div class="col-xs-4">
-                                    <a class="fancybox-pop" href="img/home/gallery/gallery-6.jpg"><img src="../../../assets/img/home/gallery/thumb-gallery-6.jpg" alt="image"></a>
+                                <div class="col-xs-12">
+                                    <form class="form-horizontal">
+                                        <div class="form-group">
+                                            <label class="control-label col-md-4 col-sm-12 col-xs-4" for="inputSuccess3">Check in:</label>
+                                            <div class="col-md-8 col-sm-12 col-xs-8 datepickerWrap">
+                                                <div class="input-group date ed-datepicker filterDate" data-provide="datepicker">
+                                                    <input type="text" class="form-control" placeholder="MM/DD/YYYY">
+                                                    <div class="input-group-addon">
+                                                        <span class="fa fa-calendar"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-md-4 col-sm-12 col-xs-4" for="inputSuccess3">Check out:</label>
+                                            <div class="col-md-8 col-sm-12 col-xs-8 datepickerWrap">
+                                                <div class="input-group date ed-datepicker filterDate" data-provide="datepicker">
+                                                    <input type="text" class="form-control" placeholder="MM/DD/YYYY">
+                                                    <div class="input-group-addon">
+                                                        <span class="fa fa-calendar"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="control-label col-md-4 col-sm-12 col-xs-4" for="inputSuccess3">Guest:</label>
+                                            <div class="col-md-8 col-sm-12 col-xs-8 datepickerWrap">
+                                                <div class="count-input">
+                                                    <a class="incr-btn" data-action="decrease" href="#">–</a>
+                                                    <input class="quantity" type="text" value="1">
+                                                    <a class="incr-btn" data-action="increase" href="#">+</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="totalCost">
+                                            <div class="col-xs-8 totalCostLeft">
+                                                <p>Total Cost</p>
+                                            </div>
+                                            <div class="col-xs-4 totalCostRight">$198</div>
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <a href="#" class="btn btn-block buttonTransparent">Check now <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-3 col-xs-12">
-                        <div class="footerContent">
-                            <h5>newsletter</h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do. </p>
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Enter your email" aria-describedby="basic-addon21">
-                                <span class="input-group-addon" id="basic-addon21"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></span>
-                            </div>
-                            <ul class="list-inline">
-                                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
+                </div>
+            </aside>
+        </div>
+    </div>
+</section>
+
+<!-- RELATED SECTION -->
+<section class="relatedSection">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="sectionTitle2">
+                    <h2>you may also like</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-lg-4 col-xs-12">
+                    <div class="thumbnail deals hotelgrid">
+                        <img src="../../../assets/img/holets/hotel-list-01.jpg" alt="deal-image">
+                        <a href="single-hotel-right-sidebar.html" class="pageLink"></a>
+                        <div class="discountInfo discountCol-3">
+                            <ul class="list-inline rating homePage">
+                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                                <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                            </ul>
+                            <ul class="list-inline dates">
+                                <li>4 review</li>
                             </ul>
                         </div>
+                        <div class="caption">
+                            <h4><a href="single-hotel-right-sidebar.html" class="captionTitle">The Rookery Hotel</a></h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <div class="detailsInfo">
+                                <h5>
+                                    <span>Start From</span> $40
+                                </h5>
+                                <ul class="list-inline detailsBtn">
+                                    <li><a href='booking-1.html' class="btn buttonTransparent">Book now</a></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="copyRight clearfix">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-6 col-sm-push-6 col-xs-12">
-                        <ul class="list-inline">
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Support</a></li>
-                            <li><a href="#">Blog</a></li>
-                        </ul>
+                <div class="col-sm-6 col-lg-4 col-xs-12">
+                    <div class="thumbnail deals hotelgrid">
+                        <img src="../../../assets/img/holets/hotel-list-02.jpg" alt="deal-image">
+                        <a href="single-hotel-right-sidebar.html" class="pageLink"></a>
+                        <div class="discountInfo discountCol-3">
+                            <ul class="list-inline rating homePage">
+                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                                <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                                <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                            </ul>
+                            <ul class="list-inline dates">
+                                <li>3 review</li>
+                            </ul>
+                        </div>
+                        <div class="caption">
+                            <h4><a href="single-hotel-right-sidebar.html" class="captionTitle">The Rookery Hotel</a></h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <div class="detailsInfo">
+                                <h5>
+                                    <span>Start From</span> $35
+                                </h5>
+                                <ul class="list-inline detailsBtn">
+                                    <li><a href='booking-1.html' class="btn buttonTransparent">Book now</a></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-sm-6 col-sm-pull-6 col-xs-12">
-                        <div class="copyRightText">
-                            <p>Copyright © 2019. All Rights Reserved by <a target="_blank" href="http://www.iamabdus.com/">me</a>.</p>
+                </div>
+                <div class="col-sm-6 col-lg-4 col-xs-12">
+                    <div class="thumbnail deals hotelgrid">
+                        <img src="../../../assets/img/holets/hotel-list-03.jpg" alt="deal-image">
+                        <a href="single-hotel-right-sidebar.html" class="pageLink"></a>
+                        <div class="discountInfo discountCol-3">
+                            <ul class="list-inline rating homePage">
+                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                            </ul>
+                            <ul class="list-inline dates">
+                                <li>5 review</li>
+                            </ul>
+                        </div>
+                        <div class="caption">
+                            <h4><a href="single-hotel-right-sidebar.html" class="captionTitle">The Rookery Hotel</a></h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <div class="detailsInfo">
+                                <h5>
+                                    <span>Start From</span> $40
+                                </h5>
+                                <ul class="list-inline detailsBtn">
+                                    <li><a href='booking-1.html' class="btn buttonTransparent">Book now</a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </footer>
-</body>
+    </div>
+</section>

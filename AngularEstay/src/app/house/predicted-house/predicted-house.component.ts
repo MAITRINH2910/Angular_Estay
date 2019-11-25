@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { House } from "src/app/model/house.model";
 import { CityService } from "src/app/service/city.service";
 import { FormBuilder, FormGroup, FormArray, FormControl, ValidatorFn } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -11,24 +10,40 @@ import { Router } from '@angular/router';
 })
 export class PredictedHouseComponent implements OnInit {
   public form: FormGroup
+  public city: string;
   public listFeature: any;
   public topHotel: any;
   public predictedHotel: any;
+  public ratingValue: number;
+  public priceValue: number;
+  public selectedListFeatureIds:  any = [];
 
   constructor(
     private cityService: CityService,private formBuilder: FormBuilder, private router: Router
   ) {
     this.listFeature = this.cityService.listFeature;
 
-    const controls = this.listFeature.map(c => new FormControl(false));
-    controls[0].setValue(true);
-
     this.form = this.formBuilder.group({
-      listFeature: new FormArray(controls, minSelectedCheckboxes(1))
+      listFeature: new FormArray([], minSelectedCheckboxes(1))
     });
+
+    this.addCheckboxes();
   }
 
+  private addCheckboxes() {
+    this.listFeature.forEach((o, i) => {
+      const control = new FormControl(i === 0); // if first item set to true, else false
+      (this.form.controls.listFeature as FormArray).push(control);
+    });
+  }
+  rating(event) {
+    this.ratingValue = event.value;
+  }
+  price(event) {
+    this.priceValue = event.value;
+  }
   ngOnInit() {
+    this.city = this.cityService.city;
     this.listFeature = this.cityService.listFeature;
     console.log(this.listFeature);
     this.topHotel = this.cityService.topHotel;
@@ -36,12 +51,17 @@ export class PredictedHouseComponent implements OnInit {
     this.predictedHotel = this.cityService.predictedHotel;
     console.log(this.predictedHotel);
   }
-  submit() {
-    const selectedListFeatureIds = this.form.value.listFeature
+  async submit() {
+    this.selectedListFeatureIds = this.form.value.listFeature
       .map((v, i) => v ? this.listFeature[i] : null)
       .filter(v => v !== null);
-    console.log(selectedListFeatureIds);
-    this.router.navigate(["/predicted-hotel"]);
+    console.log(this.selectedListFeatureIds);
+    this.predictedHotel = await this.cityService
+    .getPredictedHotelByFeature(this.city, this.ratingValue, this.priceValue, this.selectedListFeatureIds)
+    .toPromise();
+  this.predictedHotel = this.predictedHotel.response;
+  console.log(this.predictedHotel);
+  this.router.navigate(["/predicted-hotel"]);
 
   }
 }

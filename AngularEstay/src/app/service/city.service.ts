@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
-import { url} from "src/app/shared/common/common";
+import { HttpClient, HttpParams } from "@angular/common/http";
+import { url } from "src/app/shared/common/common";
 
 @Injectable({
   providedIn: "root"
@@ -15,6 +15,9 @@ export class CityService {
   public listFeature: any;
   public topHotel: any;
   public predictedHotel: any;
+  public ratingValue: number;
+  public priceValue: number;
+  public params = new HttpParams();
 
   constructor(public http: HttpClient) {}
 
@@ -23,22 +26,30 @@ export class CityService {
   }
   public getFeatureByCity(city: string) {
     var obj = { city: city };
-    return this.http.post(this.listFeatureApi,obj);
+    return this.http.post(this.listFeatureApi, obj);
   }
   public getTopHotelByCity(city: string) {
     var obj = { city: city };
-    return this.http.post(this.topHotelApi,obj);
-  } 
-  // public getPredictedHotelByFeature(city: string, list_feature: any, rating: number, price: number) {
-  //   var obj = { city: city, list_feature: list_feature, rating, price };
-  //   return this.http.post(this.predictedHotelApi,obj);
-  // }
-  public getPredictedHotelByFeature(city: string, list_feature: any) {
-    var obj = { city: city, list_feature: list_feature};
-    return this.http.post(this.predictedHotelApi,obj);
-  } 
+    return this.http.post(this.topHotelApi, obj);
+  }
 
-  public getOneHotel(id: number){
-    return this.http.get(`${this.detailHotelApi}/${id}`)
+  public getPredictedHotelByFeature(
+    city: string,   
+    rating: number,
+    price: number,
+    list_feature: any=[],
+  ) {
+    
+    var obj = {
+      city: city,
+      rating: rating,
+      price: price,
+      list_feature: list_feature   
+    };
+    return this.http.post(this.predictedHotelApi, obj);
+  }
+
+  public getOneHotel(id: number) {
+    return this.http.get(`${this.detailHotelApi}/${id}`);
   }
 }

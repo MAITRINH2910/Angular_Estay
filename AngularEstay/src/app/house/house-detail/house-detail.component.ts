@@ -22,6 +22,7 @@ export class HouseDetailComponent implements OnInit {
   getIdHotel() {
     this.activatedRouteService.params.subscribe(data => {
       let id = data.id;
+      console.log(id);
      this.cityService.getOneHotel(id).subscribe(result => {
         this.hotel = result;
         this.hotel = this.hotel.response;

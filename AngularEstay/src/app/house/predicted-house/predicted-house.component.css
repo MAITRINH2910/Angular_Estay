@@ -5458,7 +5458,7 @@ header {
 @media(min-width:1200px) {
     .bodyLeft,
     .bodyRight {
-        width: 70%
+        width: 63%
     }
 }
 
@@ -5510,7 +5510,7 @@ header {
 
 @media(min-width:1200px) {
     .bodyRight {
-        width: 28%
+        width: 37%
     }
 }
 

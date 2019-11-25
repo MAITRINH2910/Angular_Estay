@@ -12,9 +12,9 @@ import { MatSort } from '@angular/material';
   styleUrls: ['./list-user.component.css']
 })
 export class ListUserComponent implements OnInit {
-  displayedColumns: string[] = ["id", "address", "city", "hotel_owner","name","price","rating","status"];
+  displayedColumns: string[] = ["id", "username", "role"];
   userDataSource: any;
-  private allUser: any;
+  private allHotel: any;
   headerConfig = {
     headers: new HttpHeaders({
       "user-access-token": window.localStorage.getItem("AuthToken")
@@ -34,7 +34,7 @@ export class ListUserComponent implements OnInit {
     this.RenderDataTable();     
   }
   RenderDataTable() {  
-    this.adminService.getAllUser(this.headerConfig)  
+    this.adminService.getAllHotel(this.headerConfig)  
       .subscribe(  
       res => {  
         this.userDataSource = new MatTableDataSource();  
@@ -53,5 +53,4 @@ export class ListUserComponent implements OnInit {
     this.authService.logout();
   }
 }
-
 

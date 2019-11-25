@@ -16,7 +16,9 @@ import {
   MatRadioModule,
   MatNativeDateModule,
   MatSliderModule,
-  MatProgressSpinnerModule
+  MatProgressSpinnerModule,
+  MatCardModule,
+  MatToolbarModule
 } from "@angular/material";
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 
@@ -27,10 +29,8 @@ import { HttpClientModule } from "@angular/common/http";
 
 import { AppComponent } from "./app.component";
 import { HomeComponent } from "./home/home.component";
-import { AdminComponent } from "./account_Admin/admin/admin.component";
 import { HostComponent } from "./account_Host/host/host.component";
 import { DashboardComponent } from "./account_Host/dashboard/dashboard.component";
-import { PropertyComponent } from "./account_Host/property/property.component";
 import { ListHouseComponent } from "./house/list-house/list-house.component";
 import { ListHouseGirdComponent } from "./house/list-house-gird/list-house-gird.component";
 import { AddHouseComponent } from "./account_Host/add-house/add-house.component";
@@ -55,16 +55,21 @@ import { PaymentStep1Component } from './house/payment-step1/payment-step1.compo
 import { PredictedHouseComponent } from './house/predicted-house/predicted-house.component';
 import { EditProfileUserComponent } from './account_User/edit-profile-user/edit-profile-user.component';
 import { DeleteProfileUserComponent } from './account_User/delete-profile-user/delete-profile-user.component';
-import { PageAdminComponent } from './account_Admin/page-admin/page-admin.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { PreviewHotelComponent } from './account_Host/preview-hotel/preview-hotel.component';
+import { LayoutComponent } from './house/layout/layout.component';
+import { DashboardAdminComponent } from './account_Admin/dashboard-admin/dashboard-admin.component';
+import { LayoutAdminComponent } from './account_Admin/layout-admin/layout-admin.component';
+import { AddHotelComponent } from './account_Owner/add-hotel/add-hotel.component';
+import { EditHotelComponent } from './account_Owner/edit-hotel/edit-hotel.component';
+import { AllHotelOwnerComponent } from './account_Owner/all-hotel-owner/all-hotel-owner.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    AdminComponent,
     HostComponent,
     DashboardComponent,
-    PropertyComponent,
     ListHouseComponent,
     ListHouseGirdComponent,
     AddHouseComponent,
@@ -89,7 +94,14 @@ import { PageAdminComponent } from './account_Admin/page-admin/page-admin.compon
     PredictedHouseComponent,
     EditProfileUserComponent,
     DeleteProfileUserComponent,
-    PageAdminComponent
+    PageNotFoundComponent,
+    PreviewHotelComponent,
+    LayoutComponent,
+    DashboardAdminComponent,
+    LayoutAdminComponent,
+    AddHotelComponent,
+    EditHotelComponent,
+    AllHotelOwnerComponent
   ],
   imports: [
     BrowserModule,
@@ -113,7 +125,9 @@ import { PageAdminComponent } from './account_Admin/page-admin/page-admin.compon
     MatRadioModule,
     MatNativeDateModule,
     MatSliderModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatCardModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -3,13 +3,11 @@ import { Routes, RouterModule } from "@angular/router";
 import { HomeComponent } from "./home/home.component";
 import { HostComponent } from "./account_Host/host/host.component";
 import { DashboardComponent } from "./account_Host/dashboard/dashboard.component";
-import { PropertyComponent } from "./account_Host/property/property.component";
 import { AuthGuardService } from "./service/auth-guard.service";
 import { ListHouseComponent } from "./house/list-house/list-house.component";
 import { ListHouseGirdComponent } from "./house/list-house-gird/list-house-gird.component";
 import { LoginComponent } from "./auth/login/login.component";
 import { RegisterComponent } from "./auth/register/register.component";
-import { AdminComponent } from "./account_Admin/admin/admin.component";
 import { ListUserComponent } from "./account_Admin/users/list-user/list-user.component";
 import { AllBookingComponent } from "./account_Admin/booking/all-booking/all-booking.component";
 import { PendingComponent } from "./account_Admin/booking/pending/pending.component";
@@ -27,31 +25,77 @@ import { PaymentStep1Component } from "./house/payment-step1/payment-step1.compo
 import { PaymentStep2Component } from "./house/payment-step2/payment-step2.component";
 import { PaymentStep3Component } from "./house/payment-step3/payment-step3.component";
 import { PredictedHouseComponent } from "./house/predicted-house/predicted-house.component";
-import { PageAdminComponent } from './account_Admin/page-admin/page-admin.component';
+import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
+import { PreviewHotelComponent } from './account_Host/preview-hotel/preview-hotel.component';
+import { LayoutComponent } from './house/layout/layout.component';
+import { DashboardAdminComponent } from './account_Admin/dashboard-admin/dashboard-admin.component';
+import { LayoutAdminComponent } from './account_Admin/layout-admin/layout-admin.component';
+import { AddHouseComponent } from './account_Host/add-house/add-house.component';
+import { EditHotelComponent } from './account_Owner/edit-hotel/edit-hotel.component';
+import { AllHotelOwnerComponent } from './account_Owner/all-hotel-owner/all-hotel-owner.component';
 
 const routes: Routes = [
   {
     path: "",
-    redirectTo: "home",
-    pathMatch: "full"
+    component: LayoutComponent,
+    children: [
+      {
+        path: "",
+        redirectTo: "home",
+        pathMatch: "full"
+      },
+      {
+        path: "home",
+        component: HomeComponent
+      }, {
+        path: "city",
+        component: ListHouseComponent
+      },    
+      {
+        path: "predicted-hotel",
+        component: PredictedHouseComponent
+      },
+      {
+        path: "detail-hotel/:id",
+        component: HouseDetailComponent
+      },
+      {
+        path: "payment",
+        component: PaymentComponent
+      },
+      {
+        path: "payment-step1",
+        component: PaymentStep1Component
+      },
+      {
+        path: "payment-step2",
+        component: PaymentStep2Component
+      },
+      {
+        path: "payment-step3",
+        component: PaymentStep3Component
+      },
+    ]
   },
-  {
-    path: "home",
-    component: HomeComponent
-  },
+  // {
+  //   path: '404', component: PageNotFoundComponent
+  // },
+  // {
+  //   path: '**', redirectTo: '/404'
+  // },
   {
     path: "admin",
-    component: PageAdminComponent,
+    component: LayoutAdminComponent,
     canActivate: [AuthGuardService],
     children: [
       {
         path: "estay",
-        component: AdminComponent
+        component: DashboardAdminComponent
       },
-      {   
+      {
         path: "users/list-user",
         component: ListUserComponent
-      },   
+      },
       {
         path: "listing/pending-hotel",
         component: PendingComponent
@@ -78,46 +122,7 @@ const routes: Routes = [
       }
     ]
   },
-  // {
-  //   path: "admin",
-  //   component: AdminComponent
-  // },
-  // {
-  //   path: "admin/users/list-user",
-  //   component: ListUserComponent
-  // },
-  // {
-  //   path: "admin/listing/list-hotel",
-  //   component: HotelListingComponent
-  // },
-  // {
-  //   path: "admin/booking/all-booking",
-  //   component: AllBookingComponent
-  // },
-  // {
-  //   path: "admin/booking/pending-booking",
-  //   component: PendingComponent
-  // },
-  // {
-  //   path: "admin/booking/approved-booking",
-  //   component: ApprovedComponent
-  // },
-  // {
-  //   path: "admin/profile/view-profile",
-  //   component: ViewProfileComponent
-  // },
-  // {
-  //   path: "admin/profile/edit-profile",
-  //   component: EditProfileComponent
-  // },
-  // {
-  //   path: "admin/profile/change-password",
-  //   component: ChangePasswordComponent
-  // },
-  // {
-  //   path: "admin/dashboard-admin",
-  //   component: DashboardAdminComponent
-  // },
+
   {
     path: "users/register",
     component: RegisterComponent
@@ -125,20 +130,8 @@ const routes: Routes = [
   {
     path: "users/login",
     component: LoginComponent
-  },  
-  {
-    path: "city",
-    component: ListHouseComponent
   },
-
-  {
-    path: "predicted-hotel",
-    component: PredictedHouseComponent
-  },
-  {
-    path: "detail-hotel/:id",
-    component: HouseDetailComponent
-  },
+ 
   {
     path: "me/dashboard",
     component: DashboardUserComponent
@@ -151,35 +144,37 @@ const routes: Routes = [
     path: "me/booking",
     component: BookingComponent
   },
-  {
-    path: "payment",
-    component: PaymentComponent
-  },
-  {
-    path: "payment-step1",
-    component: PaymentStep1Component
-  },
-  {
-    path: "payment-step2",
-    component: PaymentStep2Component
-  },
-  {
-    path: "payment-step3",
-    component: PaymentStep3Component
-  },
   
+
   {
     path: "host",
     component: HostComponent,
     canActivate: [AuthGuardService],
     children: [
       {
+        path: "",
+        redirectTo: "dashboard",
+        pathMatch: "full",
+      },
+      {
         path: "dashboard",
         component: DashboardComponent
       },
       {
-        path: "property",
-        component: PropertyComponent
+        path: "hotel/preview-hotel",
+        component: PreviewHotelComponent
+      },
+      {
+        path: "hotel/all-hotel-owner",
+        component: AllHotelOwnerComponent
+      },
+      {
+        path: "hotel/add-hotel",
+        component: AddHouseComponent
+      },
+      {
+        path: "hotel/edit-hotel",
+        component: EditHotelComponent
       }
     ]
   }

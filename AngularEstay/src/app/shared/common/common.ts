@@ -1,6 +1,6 @@
 import { HttpErrorResponse, HttpHeaders } from "@angular/common/http";
 import { throwError } from "rxjs";
-export const url = "http://ntqp97.ddnsking.com:1111";
+export const url = "http://localhost:9999";
 export function handleError(error: HttpErrorResponse) {
   if (error.error instanceof ErrorEvent) {
     console.error("An error occurred:", error.error.message);
