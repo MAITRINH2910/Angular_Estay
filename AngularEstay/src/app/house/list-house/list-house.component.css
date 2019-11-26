@@ -3,13 +3,15 @@
 @import "../../../assets/plugins/jquery-ui/jquery-ui.min.css";
 @import "../../../assets/plugins/bootstrap/css/bootstrap.min.css";
 @import "../../../assets/plugins/font-awesome/css/font-awesome.min.css";
-@import "../../../assets/plugins/selectbox/select_option1.css";
+
+/* @import "../../../assets/plugins/selectbox/select_option1.css";
 @import "../../../assets/plugins/datepicker/datepicker.css";
 @import "../../../assets/plugins/isotope/jquery.fancybox.css";
 @import "../../../assets/plugins/isotope/isotope.css";
 @import "../../../assets/plugins/revolution/css/settings.css";
 @import "../../../assets/plugins/revolution/css/layers.css";
-@import "../../../assets/plugins/revolution/css/navigation.css";
+@import "../../../assets/plugins/revolution/css/navigation.css"; */
+
 @import "../../../assets/css/colors/default.css";
 @import "../../../assets/options/optionswitch.css";
 mat-slider {

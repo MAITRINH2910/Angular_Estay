@@ -1,26 +1,25 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
-import {
-  MatInputModule,
-  MatButtonModule,
-  MatSelectModule,
-  MatIconModule,
-  MatAutocompleteModule,
-  MatMenuModule,
-  MatExpansionModule,
-  MatTableModule,
-  MatPaginatorModule,
-  MatDialogModule,
-  MatDatepickerModule,
-  MatGridListModule,
-  MatRadioModule,
-  MatNativeDateModule,
-  MatSliderModule,
-  MatProgressSpinnerModule,
-  MatCardModule,
-  MatToolbarModule
-} from "@angular/material";
-import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
+// import {
+  // MatInputModule,
+  // MatButtonModule,
+  // MatSelectModule,
+  // MatIconModule,
+  // MatAutocompleteModule,
+  // MatMenuModule,
+  // MatExpansionModule,
+  // MatTableModule,
+  // MatPaginatorModule,
+  // MatDialogModule,
+  // MatDatepickerModule,
+  // MatGridListModule,
+  // MatRadioModule,
+  // MatNativeDateModule,
+  // MatSliderModule,
+  // MatProgressSpinnerModule,
+  // MatCardModule,
+  // MatToolbarModule
+// } from "@angular/material";
 
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { AppRoutingModule } from "./app-routing.module";
@@ -32,7 +31,6 @@ import { HomeComponent } from "./home/home.component";
 import { HostComponent } from "./account_Host/host/host.component";
 import { DashboardComponent } from "./account_Host/dashboard/dashboard.component";
 import { ListHouseComponent } from "./house/list-house/list-house.component";
-import { ListHouseGirdComponent } from "./house/list-house-gird/list-house-gird.component";
 import { AddHouseComponent } from "./account_Host/add-house/add-house.component";
 import { LoginComponent } from "./auth/login/login.component";
 import { RegisterComponent } from "./auth/register/register.component";
@@ -63,6 +61,7 @@ import { LayoutAdminComponent } from './account_Admin/layout-admin/layout-admin.
 import { AddHotelComponent } from './account_Owner/add-hotel/add-hotel.component';
 import { EditHotelComponent } from './account_Owner/edit-hotel/edit-hotel.component';
 import { AllHotelOwnerComponent } from './account_Owner/all-hotel-owner/all-hotel-owner.component';
+import { MaterialModule } from './material.module';
 
 @NgModule({
   declarations: [
@@ -71,7 +70,6 @@ import { AllHotelOwnerComponent } from './account_Owner/all-hotel-owner/all-hote
     HostComponent,
     DashboardComponent,
     ListHouseComponent,
-    ListHouseGirdComponent,
     AddHouseComponent,
     LoginComponent,
     RegisterComponent,
@@ -109,25 +107,8 @@ import { AllHotelOwnerComponent } from './account_Owner/all-hotel-owner/all-hote
     ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
-    MatInputModule,
-    MatButtonModule,
-    MatSelectModule,
-    MatIconModule,
-    MatAutocompleteModule,
-    MatMenuModule,
-    MatExpansionModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatDialogModule,
-    MatDatepickerModule,
-    MatGridListModule,
-    MatRadioModule,
-    MatNativeDateModule,
-    MatSliderModule,
-    MatProgressSpinnerModule,
-    MatCardModule,
-    MatToolbarModule
+    BrowserAnimationsModule,   
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent],

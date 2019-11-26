@@ -13,13 +13,12 @@ import { HttpHeaders } from '@angular/common/http';
   styleUrls: ["./login.component.css"]
 })
 
-export class LoginComponent implements OnInit {
- 
+export class LoginComponent implements OnInit { 
   public form: any = {};
   public isLoggedIn = false;
   public isLoginFailed = false;
-  errorMessage = "";
-  role: string;
+  public errorMessage = "";
+  public role: string;
   sub: Subscription;
   private loginInfo: AuthLoginInfo;
   public responseData: any;

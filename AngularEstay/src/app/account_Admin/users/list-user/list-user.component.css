@@ -1,32 +1,3 @@
-/* ----------------------------------------------------
-Theme Name:		Star Travel Admin Panel - HTML Template
-Version:		1.8
-Author:			Kiswa Solutions
-------------------------------------------------------- */
-
-
-/* ======================================================
-	TABLE OF CONTENTS
-   ====================================================== */
-
-
-/**
-
-* 1.0	Settings
-* 1.1	Top Bar Block
-* 1.2	Sidebar-Left Block
-* 1.3	Messages Block
-* 1.4	Bookings Block
-* 1.5	Listing Add Details Block
-* 1.6	Listings Block
-* 1.7	Profile Block
-* 1.8	Users
-* 1.9	Reviews
-* 1.10	Bookmarks
-* 1.11	Dashboard
-
-*/
-
 @import url("https://fonts.googleapis.com/css?family=Baloo+Chettan|Roboto+Slab|Work+Sans");
 
 /* =====================================================
@@ -87,16 +58,6 @@ select:focus {
 
 ul {
     margin: 0;
-}
-
-input:focus,
-.custom-select:focus {
-    -webkit-box-shadow: 0 0 0 1px #b3b3b3 !important;
-    box-shadow: 0 0 0 1px #b3b3b3 !important;
-    color: #495057;
-    background-color: #fff;
-    border-color: #b3b3b3 !important;
-    outline: 0;
 }
 
 input[type=date]::-webkit-inner-spin-button {
@@ -9103,16 +9064,16 @@ input[type=submit].btn-block {
     overflow: hidden
 }
 
-.accordion .:not(:first-of-type) .-header:first-child {
+.accordion :not(:first-of-type) .-header:first-child {
     border-radius: 0
 }
 
-.accordion .:not(:first-of-type):not(:last-of-type) {
+.accordion :not(:first-of-type):not(:last-of-type) {
     border-bottom: 0;
     border-radius: 0
 }
 
-.accordion .:first-of-type {
+.accordion .first-of-type {
     border-bottom: 0;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0
@@ -26582,3 +26543,24 @@ div.dataTables_wrapper span.select-item {
 
 
 /*# sourceMappingURL=custom.datatables.css.map */
+
+.example-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+}
+
+.example-header {
+    min-height: 64px;
+    padding: 8px 24px 0;
+}
+
+.mat-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+
+.mat-table {
+    overflow: auto;
+    max-height: 500px;
+}

@@ -3,13 +3,15 @@
 @import "../../../assets/plugins/jquery-ui/jquery-ui.min.css";
 @import "../../../assets/plugins/bootstrap/css/bootstrap.min.css";
 @import "../../../assets/plugins/font-awesome/css/font-awesome.min.css";
-@import "../../../assets/plugins/selectbox/select_option1.css";
+
+/* @import "../../../assets/plugins/selectbox/select_option1.css";
 @import "../../../assets/plugins/datepicker/datepicker.css";
 @import "../../../assets/plugins/isotope/jquery.fancybox.css";
 @import "../../../assets/plugins/isotope/isotope.css";
 @import "../../../assets/plugins/revolution/css/settings.css";
 @import "../../../assets/plugins/revolution/css/layers.css";
-@import "../../../assets/plugins/revolution/css/navigation.css";
+@import "../../../assets/plugins/revolution/css/navigation.css"; */
+
 @import "../../../assets/css/colors/default.css";
 @import "../../../assets/options/optionswitch.css";
 * {
@@ -72,12 +74,6 @@ h4 {
 .mb-30 {
     margin-bottom: 30px
 }
-
-
-/* 
-.container {
-    width: 100%
-} */
 
 body.bodyColor.wrapper {
     margin: 0 auto
@@ -9688,7 +9684,8 @@ header {
     opacity: 1
 }
 
-@media(max-width:767px) {
+
+/* @media(max-width:767px) {
     .bookingConfirmed .alert-dismissable .close,
     .bookingConfirmed .alert-dismissible .close {
         font-size: 10px
@@ -9700,7 +9697,7 @@ header {
     .bookingConfirmed .alert-dismissible .close {
         font-size: 14px
     }
-}
+} */
 
 .bookingConfirmed .infoTitle h2 {
     font-size: 26px
@@ -9819,6 +9816,8 @@ header {
     font-size: 40px
 }
 
+
+/* 
 @media(max-width:767px) {
     .comingContent h1 {
         font-size: 30px;
@@ -9831,19 +9830,21 @@ header {
         font-size: 40px;
         margin: 20px 0 40px
     }
-}
+} */
 
 .comingContent p {
     color: #a7a7a7;
     margin-bottom: 20px
 }
 
+
+/* 
 @media(max-width:767px) {
     .comingContent p {
         font-size: 10px;
         line-height: 15px
     }
-}
+} */
 
 @media(min-width:768px) {
     .comingContent p {
@@ -9857,6 +9858,8 @@ header {
     margin-bottom: 20px
 }
 
+
+/* 
 @media(max-width:767px) {
     .comingContent .input-group {
         width: 100%
@@ -9867,7 +9870,7 @@ header {
     .comingContent .input-group {
         width: 550px
     }
-}
+} */
 
 .comingContent .input-group .form-control {
     height: 45px;
@@ -9885,6 +9888,8 @@ header {
     border-radius: 4px
 }
 
+
+/* 
 @media(max-width:767px) {
     .comingContent .input-group .input-group-addon {
         padding: 6px 15px
@@ -9907,7 +9912,7 @@ header {
     .comingContent .list-inline li {
         padding: 0 2px
     }
-}
+} */
 
 @media(min-width:1200px) {
     .comingContent .list-inline li {
@@ -9933,6 +9938,8 @@ header {
     color: #fff
 }
 
+
+/* 
 @media(max-width:767px) {
     .comingContent .list-inline li a {
         width: 35px;
@@ -9949,7 +9956,7 @@ header {
         line-height: 25px;
         font-size: 10px
     }
-}
+} */
 
 @media(min-width:992px) {
     .comingContent .list-inline li a {
@@ -9975,6 +9982,8 @@ header {
     display: inline-block
 }
 
+
+/* 
 @media(min-width:480px) {
     .count-down #simple_timer .table-cell {
         margin: 0 10px
@@ -9985,7 +9994,7 @@ header {
     .count-down #simple_timer .table-cell {
         margin: 0 10px
     }
-}
+} */
 
 @media(min-width:992px) {
     .count-down #simple_timer .table-cell {
@@ -10008,6 +10017,8 @@ header {
     border: 1px solid #fff
 }
 
+
+/* 
 @media(max-width:767px) {
     .count-down #simple_timer .table-cell .tab-val {
         width: 65px;
@@ -10024,7 +10035,7 @@ header {
         line-height: 85px;
         font-size: 35px
     }
-}
+} */
 
 @media(min-width:992px) {
     .count-down #simple_timer .table-cell .tab-val {
@@ -11529,77 +11540,4 @@ header {
     color: #fff;
     border: 0;
     margin-top: 10px
-}
-
-.signupLoging .modal-header {
-    border-top: 6px solid #ff891e;
-    border-top-left-radius: 6px;
-    border-top-right-radius: 6px;
-    border-bottom: 0;
-    padding: 10px 20px
-}
-
-.signupLoging .modal-header .close {
-    font-size: 30px;
-    color: #222;
-    opacity: 1;
-    font-weight: 400
-}
-
-.signupLoging .modal-header .modal-title {
-    font-size: 20px;
-    font-weight: 700;
-    margin-top: 3px
-}
-
-.signupLoging .modal-body {
-    padding: 10px 20px
-}
-
-.signupLoging .modal-body .form-group .form-control {
-    padding: 22px 18px;
-    border-color: #e5e5e5;
-    box-shadow: none
-}
-
-.signupLoging .modal-body .checkbox {
-    margin-bottom: 12px
-}
-
-.signupLoging .modal-body .checkbox .forgotPass {
-    float: right
-}
-
-.signupLoging .modal-body .btn-default {
-    width: 100%;
-    background-color: #ff891e;
-    border: 0;
-    color: #fff;
-    margin-top: 3px
-}
-
-.signupLoging .modal-body .btn-default.btnSocial {
-    background-color: #6684c4
-}
-
-.signupLoging .modal-body .btn-default.btnSocial:hover {
-    opacity: 1
-}
-
-.signupLoging .modal-body .or {
-    font-size: 15px;
-    color: #222;
-    text-align: center;
-    text-transform: uppercase;
-    margin: 15px
-}
-
-.signupLoging .modal-footer {
-    padding: 10px 20px;
-    border-top: 0;
-    text-align: center
-}
-
-.signupLoging .modal-footer .dontHaveAccount p a {
-    color: #ff891e
 }
