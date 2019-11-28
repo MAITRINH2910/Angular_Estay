@@ -10,7 +10,7 @@ export class CityService {
   public listFeatureApi: string = url + "/hotels/get_features";
   public topHotelApi: string = url + "/hotels/get_top_hotels";
   public predictedHotelApi: string = url + "/hotels/get_predicted_hotels";
-  public detailHotelApi: string = url + "get_one_hotel";
+  public detailHotelApi: string = url + "/hotels/get_one_hotel";
   public city: string;
   public listFeature: any;
   public topHotel: any;
@@ -18,7 +18,8 @@ export class CityService {
   public ratingValue: number;
   public priceValue: number;
   public params = new HttpParams();
-
+  public property: any;
+  public utilities: any;
   constructor(public http: HttpClient) {}
 
   public getAllCities() {
@@ -34,22 +35,21 @@ export class CityService {
   }
 
   public getPredictedHotelByFeature(
-    city: string,   
+    city: string,
     rating: number,
     price: number,
-    list_feature: any=[],
+    list_feature: any = []
   ) {
-    
     var obj = {
       city: city,
       rating: rating,
       price: price,
-      list_feature: list_feature   
+      list_feature: list_feature
     };
     return this.http.post(this.predictedHotelApi, obj);
   }
 
-  public getOneHotel(id: number) {
-    return this.http.get(`${this.detailHotelApi}/${id}`);
+  public getOneHotel(id: string) {
+    return this.http.get(this.detailHotelApi + "/" + id);
   }
 }

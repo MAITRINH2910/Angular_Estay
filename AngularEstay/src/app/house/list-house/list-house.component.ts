@@ -25,7 +25,8 @@ export class ListHouseComponent implements OnInit {
   public priceValue: number;
   public params = new HttpParams();
   public selectedListFeatureIds:  any = [];
-  ;
+  public loading = false;
+
 
   constructor(
     private cityService: CityService,
@@ -72,25 +73,17 @@ export class ListHouseComponent implements OnInit {
     this.price(event);
     this.priceValue = this.cityService.priceValue;
   }
-  async submit() {
-  
+  async submit() {  
     this.selectedListFeatureIds = this.form.value.listFeature
       .map((v, i) => (v ? this.listFeature[i] : null))
       .filter(v => v !== null);    
 
     console.log(this.selectedListFeatureIds); 
 
-    // this.predictedHotel = this.cityService.getPredictedHotelByFeature(this.city, this.ratingValue, this.priceValue, this.selectedListFeatureIds).subscribe(data => {
-    //     this.predictedHotel = data;
-    //     this.predictedHotel = this.predictedHotel.response;
-    //     this.router.navigate(["/predicted-hotel"]);
-
-    //     console.log(this.predictedHotel);
-    //   });
-    this.predictedHotel = await this.cityService
+      this.predictedHotel = await this.cityService
     .getPredictedHotelByFeature(this.city, this.ratingValue, this.priceValue, this.selectedListFeatureIds)
     .toPromise();
-  this.predictedHotel = this.predictedHotel.response;
+   
   console.log(this.predictedHotel);
   this.router.navigate(["/predicted-hotel"]);
   }

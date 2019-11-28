@@ -174,6 +174,7 @@
           </div>
         </div>
       </aside>
+      <div *ngIf="loading" class="loader"></div>
 
       <div class="col-sm-9 col-xs-12 ">
         <div class="row sidebarPage">
@@ -193,9 +194,9 @@
               <div class="media-body">
                 <div class="bodyLeft">
                   <h4 class="media-heading">
-                    <a href="single-hotel-right-sidebar.html">{{
-                      hotel.name
-                    }}</a>
+                      <a [routerLink]="['/detail-hotel', hotel.id]" routerLinkActive="router-link-active" 
+                      >{{hotel.name}}</a
+                    >
                   </h4>
                   <div class="countryRating">
                     <ul class="list-inline rating">
@@ -222,10 +223,11 @@
                     <h2>{{ hotel.price | currency: "VND" }}</h2>
                     <p>Per Night</p>
                     <a
-                      href="single-hotel-right-sidebar.html"
-                      class="btn buttonTransparent clearfix"
-                      >Details</a
-                    >
+                        [routerLink]="['/detail-hotel', hotel.id]" routerLinkActive="router-link-active" 
+                          
+                          class="btn buttonTransparent clearfix"
+                          >Details</a
+                        >
                     <a href="booking-1.html" class="btn buttonTransparent"
                       >book</a
                     >

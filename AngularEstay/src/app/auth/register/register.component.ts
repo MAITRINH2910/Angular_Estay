@@ -1,6 +1,9 @@
 import { Component, OnInit } from "@angular/core";
-import { AuthUserService } from 'src/app/service/auth-user.service';
-import { SignUpInfo } from 'src/app/model/signup-info';
+import { TokenStorageService } from "src/app/service/token-storage.service";
+import { AuthUserService } from "src/app/service/auth-user.service";
+import { Router } from "@angular/router";
+import { FormGroup, FormBuilder, Validators } from "@angular/forms";
+import { SignUpInfo } from "src/app/model/signup-info";
 
 @Component({
   selector: "app-register",
@@ -8,35 +11,56 @@ import { SignUpInfo } from 'src/app/model/signup-info';
   styleUrls: ["./register.component.css"]
 })
 export class RegisterComponent implements OnInit {
- 
+  public loading = false;
+  public submitted = false;
+  public errorMessage = "";
+  private response: any;
   form: any = {};
   signupInfo: SignUpInfo;
-  isSignedUp = false;
   isSignUpFailed = false;
-  errorMessage = '';
+  registerForm: FormGroup;
 
-  constructor(private authService: AuthUserService) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private authService: AuthUserService,
+    private tokenStorage: TokenStorageService,
+    private router: Router
+  ) {}
 
-  ngOnInit() { }
-
+  ngOnInit() {
+    this.registerForm = this.formBuilder.group({
+      username: ["", Validators.required],
+      password: ["", [Validators.required, Validators.minLength(6)]]
+    });
+  }
+  get f() {
+    return this.registerForm.controls;
+  }
   onSubmit() {
-    console.log(this.form);
+    this.submitted = true;
+
+    // stop here if form is invalid
+    if (this.registerForm.invalid) {
+      return;
+    }
 
     this.signupInfo = new SignUpInfo(
-      this.form.username,
-      this.form.password);
-
-    this.authService.signUp(this.signupInfo).subscribe(
-      data => {
-        console.log(data);
-        this.isSignedUp = true;
-        this.isSignUpFailed = false;
-      },
-      error => {
-        console.log(error);
-        this.errorMessage = error.error.message;
-        this.isSignUpFailed = true;
-      }
+      this.f.username.value,
+      this.f.password.value,
+      "HOTEL_OWNER"
     );
+    console.log(this.signupInfo);
+
+    this.authService.signUp(this.signupInfo).subscribe(data => {
+      this.response = data;
+      this.response = this.response.response;
+      console.log(data);
+      // this.isSignUpFailed = false;
+
+      // this.errorMessage = this.response.error;
+      // console.log(this.errorMessage);
+      // this.isSignUpFailed = true;
+      // this.loading = false;
+    });
   }
 }

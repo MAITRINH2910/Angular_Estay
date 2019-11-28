@@ -17,6 +17,7 @@ export class PredictedHouseComponent implements OnInit {
   public ratingValue: number;
   public priceValue: number;
   public selectedListFeatureIds:  any = [];
+  public loading = false;
 
   constructor(
     private cityService: CityService,private formBuilder: FormBuilder, private router: Router
@@ -59,6 +60,10 @@ export class PredictedHouseComponent implements OnInit {
     this.predictedHotel = await this.cityService
     .getPredictedHotelByFeature(this.city, this.ratingValue, this.priceValue, this.selectedListFeatureIds)
     .toPromise();
+    this.loading = true;
+if(this.predictedHotel != null){
+  this.loading =false;
+}
   this.predictedHotel = this.predictedHotel.response;
   console.log(this.predictedHotel);
   this.router.navigate(["/predicted-hotel"]);

@@ -40,7 +40,7 @@
               </li>
               <li *ngIf="!authority" class="dropdown singleDrop ">
                 <a
-                  [routerLink]="['/users/login']"
+                  [routerLink]="['/login']"
                   routerLinkActive="router-link-active"
                   role="button"
                   aria-haspopup="true"
@@ -50,7 +50,7 @@
               </li>
               <li *ngIf="!authority" class="dropdown singleDrop ">
                 <a
-                  [routerLink]="['/users/register']"
+                  [routerLink]="['/register']"
                   routerLinkActive="router-link-active"
                   role="button"
                   aria-haspopup="true"
@@ -75,7 +75,9 @@
       </nav>
     </header>
     <router-outlet></router-outlet>
+ 
     <footer>
+      <hr/>
       <div class="footer clearfix footer-light" style="padding: 35px 0 35px 0">
         <div class="container">
           <div class="row">

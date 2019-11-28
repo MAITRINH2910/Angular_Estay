@@ -10,7 +10,9 @@ import { Hotel } from "./../../model/hotel.model";
 })
 export class HouseDetailComponent implements OnInit {
   public hotel: any;
-
+  public property: any;
+  public utilities: any;
+  public haveUtility= [];
   constructor(private cityService: CityService, private activatedRouteService: ActivatedRoute
     ) { }
 
@@ -19,15 +21,26 @@ export class HouseDetailComponent implements OnInit {
     this.getIdHotel();   
   }
 
-  getIdHotel() {
+   getIdHotel() {
     this.activatedRouteService.params.subscribe(data => {
       let id = data.id;
       console.log(id);
-     this.cityService.getOneHotel(id).subscribe(result => {
-        this.hotel = result;
-        this.hotel = this.hotel.response;
-        console.log(this.hotel)
-      })
+      this.cityService.getOneHotel(id).subscribe(result => {      
+      console.log(result);
+
+      this.hotel = result;
+      this.property = this.hotel.response.detail_hotels;
+      this.utilities = this.hotel.response.utilities;
+      for (let utility in this.utilities) {
+        let value = this.utilities[utility];
+        if (value==1){
+          this.haveUtility.push(utility);
+          console.log(this.haveUtility)
+        }
+    }
+      
+      
+    })
     })
   }
 }

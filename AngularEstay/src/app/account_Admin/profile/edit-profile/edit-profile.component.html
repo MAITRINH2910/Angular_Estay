@@ -22,7 +22,6 @@
                 <!-- End column -->
             </div>
             <!-- end row -->
-
             <div class="box">
                 <div class="row">
                     <div class="col">
@@ -35,26 +34,23 @@
                 </div>
                 <!-- end row -->
                 <div class="hotel-listing-form">
-                    <form class="text-center">
+                    <form class="text-center" [formGroup]="editForm" (ngSubmit)="onSubmit()">
                         <div class="row">
                             <div class="col-sm-8">
                                 <div class="form-row">
                                     <div class="col-md">
                                         <div class="form-group">
-                                            <label for="to" class="">Username:</label>
-                                            <input type="text" class="form-control" required id="to">
-                                        </div>
-                                        <!-- end form-group -->
-                                    </div>
-                                    <!-- end column -->
-                                </div>
-                                <!-- end form-row -->
-
-                                <div class="form-row">
-                                    <div class="col-md">
-                                        <div class="form-group">
-                                            <label for="to2" class="">Password :</label>
-                                            <input type="text" class="form-control" required id="to2">
+                                            <label for="to2" class="">New Password :</label>
+                                            <input type="password" class="form-control" required formControlName="password" name="password">
+                                            <div class="alert-danger" *ngIf="submitted && editForm.get('password').errors; else notPass" class="invalid-feedback">
+                                                <div *ngIf="editForm.get('password').errors['required']">Password is required</div>
+                                            </div>
+                                            <ng-template #notPass>
+                                                <div class="alert-danger" *ngIf="editForm.get('password').dirty && editForm.get('password').errors">
+                                                    <div *ngIf="editForm.get('password').errors['required']">
+                                                        Password is required</div>
+                                                </div>
+                                            </ng-template>
                                         </div>
                                         <!-- end form-group -->
                                     </div>
@@ -63,18 +59,29 @@
                                 <div class="form-row">
                                     <div class="col-md">
                                         <div class="form-group">
-                                            <label style="height:50px" for="to3" class="">Confirm Password:</label>
-                                            <input style="height:50px" type="text" class="form-control" required id="to3">
+                                            <label style="height:37px" for="to3" class="">Confirm Password:</label>
+                                            <input style="height:38px" type="password" class="form-control" id="to3" formControlName="cfPassword" name="cfPassword">
+                                            <div class="alert-danger" *ngIf="submitted && editForm.get('cfPassword').errors; else notCf" class="invalid-feedback">
+                                                <div *ngIf="editForm.get('cfPassword').errors['required']">Confirm Password is required</div>
+                                                <div *ngIf="editForm.get('cfPassword').errors['mustMatch']">Passwords must match</div>
+                                            </div>
+                                            <ng-template #notCf>
+                                                <div class="alert-danger" *ngIf="editForm.get('cfPassword').dirty && editForm.get('cfPassword').errors">
+                                                    <div *ngIf="editForm.get('cfPassword').errors['required']">
+                                                        Confirm Password is required</div>
+                                                    <div *ngIf="editForm.get('cfPassword').touched &&editForm.get('cfPassword').errors['mustMatch']">
+                                                        Passwords must match
+                                                    </div>
+                                                </div>
+                                            </ng-template>
                                         </div>
                                         <!-- end form-group -->
                                     </div>
                                 </div>
-
-                                <!-- end form-row -->
                                 <!-- end form-group -->
                                 <ul class="list-inline">
                                     <li class="list-inline-item">
-                                        <button type="submit" class="btn">Submit</button>
+                                        <button type="submit" class="btn">Update</button>
                                     </li>
                                     <li class="list-inline-item">
                                         <button type="submit" class="btn">Cancel</button>

@@ -31,12 +31,12 @@ import { PredictedHouseComponent } from "./house/predicted-house/predicted-house
 // import { PaymentStep3Component } from "./house/payment-step3/payment-step3.component";
 // import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
 
-import { HostComponent } from "./account_Host/host/host.component";
 import { DashboardComponent } from "./account_Host/dashboard/dashboard.component";
-import { AddHouseComponent } from './account_Host/add-house/add-house.component';
-import { PreviewHotelComponent } from './account_Host/preview-hotel/preview-hotel.component';
-import { EditHotelComponent } from './account_Owner/edit-hotel/edit-hotel.component';
-import { AllHotelOwnerComponent } from './account_Owner/all-hotel-owner/all-hotel-owner.component';
+import { EditHomestayComponent } from './account_Host/edit-homestay/edit-homestay.component';
+import { AddHomestayComponent } from './account_Host/add-homestay/add-homestay.component';
+import { AllHostHomestayComponent } from './account_Host/all-host-homestay/all-host-homestay.component';
+import { LayoutHostComponent } from './account_Host/layout-host/layout-host.component';
+import { PreviewHomestayComponent } from './account_Host/preview-homestay/preview-homestay.component';
 
 const routes: Routes = [
   {
@@ -99,10 +99,10 @@ const routes: Routes = [
   {
     path: "admin",
     component: LayoutAdminComponent,
-    canActivate: [RoleGuardService], 
-    data: { 
-      expectedRole: 'ADMIN'
-    },
+    canActivate: [AuthGuardService], 
+    // data: { 
+    //   expectedRole: 'ADMIN'
+    // },
     children: [
       {
         path: "estay",
@@ -137,11 +137,11 @@ const routes: Routes = [
   
   {
     path: "host",
-    component: HostComponent,
-    canActivate: [RoleGuardService], 
-    data: { 
-      expectedRole: 'HOTEL-OWNER'
-    },
+    component: LayoutHostComponent,
+    // canActivate: [RoleGuardService], 
+    // data: { 
+    //   expectedRole: 'HOTEL_OWNER'
+    // },
     children: [
       {
         path: "",
@@ -153,36 +153,23 @@ const routes: Routes = [
         component: DashboardComponent
       },
       {
-        path: "hotel/preview-hotel",
-        component: PreviewHotelComponent
+        path: "homestay/preview-homestay",
+        component: PreviewHomestayComponent
       },
       {
-        path: "hotel/all-hotel-owner",
-        component: AllHotelOwnerComponent
+        path: "homestay/all-hotel-owner",
+        component: AllHostHomestayComponent
       },
       {
-        path: "hotel/add-hotel",
-        component: AddHouseComponent
+        path: "homestay/add-homestay",
+        component: AddHomestayComponent
       },
       {
-        path: "hotel/edit-hotel",
-        component: EditHotelComponent
+        path: "homestay/edit-homestay",
+        component: EditHomestayComponent
       }
     ]
-  },
-
-  // {
-  //   path: "me/dashboard",
-  //   component: DashboardUserComponent
-  // },
-  // {
-  //   path: "me/profile",
-  //   component: ProfileComponent
-  // },
-  // {
-  //   path: "me/booking",
-  //   component: BookingComponent
-  // },
+  }, 
 ];
 
 @NgModule({

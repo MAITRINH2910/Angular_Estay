@@ -13,13 +13,12 @@ import { AuthUserService } from "src/app/service/auth-user.service";
 import { HouseService } from "src/app/service/house.service";
 import { TokenStorageService } from "src/app/service/token-storage.service";
 import { Hotel } from "src/app/model/hotel.model";
-
 @Component({
-  selector: "app-add-house",
-  templateUrl: "./add-house.component.html",
-  styleUrls: ["./add-house.component.css"]
+  selector: 'app-edit-homestay',
+  templateUrl: './edit-homestay.component.html',
+  styleUrls: ['./edit-homestay.component.css']
 })
-export class AddHouseComponent implements OnInit {
+export class EditHomestayComponent implements OnInit {
   sub: Subscription;
   submitted = false;
   loading = false;

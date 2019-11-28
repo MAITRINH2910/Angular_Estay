@@ -3,14 +3,14 @@ import { Subscription } from 'rxjs';
 import { HouseService } from 'src/app/service/house.service';
 import { AuthUserService } from 'src/app/service/auth-user.service';
 import { Hotel } from 'src/app/model/hotel.model';
-
 @Component({
-  selector: 'app-preview-hotel',
-  templateUrl: './preview-hotel.component.html',
-  styleUrls: ['./preview-hotel.component.css']
+  selector: 'app-preview-homestay',
+  templateUrl: './preview-homestay.component.html',
+  styleUrls: ['./preview-homestay.component.css']
 })
-export class PreviewHotelComponent implements OnInit {
+export class PreviewHomestayComponent implements OnInit {
 
+  
   sub: Subscription;
   listHotel: Hotel[];
   constructor(private houseService: HouseService, private authService: AuthUserService) { }
