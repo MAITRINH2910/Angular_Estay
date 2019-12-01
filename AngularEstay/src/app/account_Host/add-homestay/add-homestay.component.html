@@ -37,24 +37,65 @@
                 </div>
                 <!-- end row -->
                 <div class="hotel-listing-form">
-                    <form class="text-center">
+                    <form class="text-center" [formGroup]="formAddHouse" (ngSubmit)="onSubmit()">
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="form-row">
                                     <div class="col-md">
                                         <div class="form-group">
                                             <label for="to" class="">Name</label>
-                                            <input type="text" class="form-control" required id="to" />
+                                            <input type="text" class="form-control" formControlName="name" />
+                                            <div *ngIf="submitted; else nottitle">
+                                                <div style="color: red; font-size: 14px" *ngIf="formAddHouse.controls.name.errors?.required||formAddHouse.controls.name.dirty
+                                                       && formAddHouse.controls.name.invalid
+                                                       ||formAddHouse.controls.name.touched">
+                                                    <div *ngIf="formAddHouse.controls.name.errors?.required; else enter5">Cần điền vào trường này!</div>
+                                                    <ng-template #enter5>
+                                                        <div *ngIf="formAddHouse.controls.name.hasError('whitespace')">Cần điền vào trường này!</div>
+                                                    </ng-template>
+                                                </div>
+                                            </div>
+
+                                            <ng-template #nottitle>
+                                                <div style="color: red; font-size: 14px" *ngIf="formAddHouse.controls.name.dirty && formAddHouse.controls.name.invalid 
+                                                      ||formAddHouse.controls.name.touched">
+                                                    <div *ngIf="formAddHouse.controls.name.errors?.required; else enter5">Cần điền vào trường này!</div>
+                                                    <ng-template #enter5>
+                                                        <div *ngIf="formAddHouse.controls.name.hasError('whitespace')">Cần điền vào trường này!</div>
+                                                    </ng-template>
+                                                </div>
+                                            </ng-template>
                                         </div>
                                         <!-- end form-group -->
                                     </div>
                                 </div>
+
                                 <!-- end column -->
                                 <div class="form-row">
                                     <div class="col-md">
                                         <div class="form-group">
                                             <label for="to1" class="">Address</label>
-                                            <input type="text" class="form-control" required id="to1" />
+                                            <input type="text" class="form-control" formControlName="address" id="to1" />
+                                            <div *ngIf="submitted; else nottitle">
+                                                <div style="color: red; font-size: 14px" *ngIf="formAddHouse.controls.address.errors?.required||formAddHouse.controls.address.dirty
+                                                       && formAddHouse.controls.address.invalid
+                                                       ||formAddHouse.controls.address.touched">
+                                                    <div *ngIf="formAddHouse.controls.address.errors?.required; else enter5">Cần điền vào trường này!</div>
+                                                    <ng-template #enter5>
+                                                        <div *ngIf="formAddHouse.controls.address.hasError('whitespace')">Cần điền vào trường này!</div>
+                                                    </ng-template>
+                                                </div>
+                                            </div>
+
+                                            <ng-template #nottitle>
+                                                <div style="color: red; font-size: 14px" *ngIf="formAddHouse.controls.address.dirty && formAddHouse.controls.address.invalid 
+                                                      ||formAddHouse.controls.address.touched">
+                                                    <div *ngIf="formAddHouse.controls.address.errors?.required; else enter5">Cần điền vào trường này!</div>
+                                                    <ng-template #enter5>
+                                                        <div *ngIf="formAddHouse.controls.address.hasError('whitespace')">Cần điền vào trường này!</div>
+                                                    </ng-template>
+                                                </div>
+                                            </ng-template>
                                         </div>
                                         <!-- end form-group -->
                                     </div>
@@ -65,7 +106,7 @@
                                     <div class="col-md">
                                         <div class="form-group">
                                             <label for="to2" class="">City</label>
-                                            <input type="text" class="form-control" required id="to2" />
+                                            <input type="text" class="form-control" formControlName="city" id="to2" />
                                         </div>
                                         <!-- end form-group -->
                                     </div>
@@ -75,7 +116,7 @@
                                     <div class="col-md">
                                         <div class="form-group">
                                             <label for="to3" class="">Price</label>
-                                            <input type="text" class="form-control" required id="to3" />
+                                            <input type="text" class="form-control" formControlName="price" id="to3" />
                                         </div>
                                         <!-- end form-group -->
                                     </div>
@@ -85,7 +126,18 @@
                                     <div class="col-md">
                                         <div class="form-group">
                                             <label for="to2" class="">Link Image</label>
-                                            <input type="text" class="form-control" required id="to2" />
+                                            <input type="text" class="form-control" formControlName="img" id="to2" />
+                                        </div>
+                                        <!-- end form-group -->
+                                    </div>
+                                    <!-- end column -->
+                                </div>
+                                <!-- end column -->
+                                <div class="form-row">
+                                    <div class="col-md">
+                                        <div class="form-group">
+                                            <label for="to2" class="">Rating</label>
+                                            <input type="text" class="form-control" formControlName="rating" id="to2" />
                                         </div>
                                         <!-- end form-group -->
                                     </div>

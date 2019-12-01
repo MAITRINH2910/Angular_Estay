@@ -5,7 +5,8 @@
         <div class="sidebar-topbar text-center">
             <i class="fa fa-plane"></i
       ><span class="text"
-        ><a [routerLink]="['/']" routerLinkActive="router-link-active"
+        ><a [routerLink]="['/']" routerLinkActive="router-link-active" style="color: red;
+        font-weight: 1000;"
           >Star Travels</a
         ></span
       >
@@ -18,7 +19,7 @@
           <a
             [routerLink]="['/host']"
             routerLinkActive="router-link-active"
-            class="items-list first active"
+            class="items-list first active" style="padding-left: 12px"
           >
             <span
               ><i
@@ -44,26 +45,14 @@
             <a style="color: black" [routerLink]="['/host/homestay/all-homestay-owner']" routerLinkActive="router-link-active">All</a
               >
               <hr />
-              <a
-              style="color: black"
-              [routerLink]="['/host/homestay/pending-homestay']"
-              routerLinkActive="router-link-active"
-              >Pending Hotel</a
-            >
-            <hr />
+            
               <a
                 style="color: black"
                 [routerLink]="['/host/homestay/add-homestay']"
                 routerLinkActive="router-link-active"
                 >Add Hotel</a
               >
-              <hr />
-              <a
-                style="color: black"
-                [routerLink]="['/host/homestay/edit-homestay']"
-                routerLinkActive="router-link-active"
-                >Edit Hotel</a
-              >
+                         
             </mat-expansion-panel>
           </mat-accordion>
           <!-- End sub-menu -->
@@ -122,10 +111,10 @@
           class="list-inline-item"
           data-toggle="tooltip"
           data-html="true"
-          title="Edit Profile"
+          title="Dashboard"
         >
           <a
-            [routerLink]="['/host/profile/edit-profile']"
+            [routerLink]="['/host']"
             routerLinkActive="router-link-active"
             ><i class="fa fa-cog"></i
           ></a>

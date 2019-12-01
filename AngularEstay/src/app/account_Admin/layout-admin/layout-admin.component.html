@@ -14,7 +14,7 @@
                 class="fa fa-home link-icon"
                 data-toggle="tooltip"
                 data-html="true"
-                title="Dashboard"
+                title="Dashboard" style="padding-left: 12px"
               ></i
             ></span>
                         <span class="items-list-text" style="color: black;">Dashboard</span>
@@ -42,7 +42,7 @@
               <mat-expansion-panel-header>
                 <mat-panel-title>
                   <i class="fa fa-suitcase" style="margin: 3px"></i>
-                  <span> Listing</span>
+                  <span> Listing Hotel</span>
                 </mat-panel-title>
               </mat-expansion-panel-header>
               <a
@@ -106,9 +106,9 @@
               <hr />
               <a
                 style="color: black"
-                [routerLink]="['/admin/profile/edit-profile']"
+                [routerLink]="['/admin/profile/change-password']"
                 routerLinkActive="router-link-active"
-                >Edit Profile</a
+                >Change Password</a
               >              
             </mat-expansion-panel>
           </mat-accordion>
@@ -123,10 +123,10 @@
           class="list-inline-item"
           data-toggle="tooltip"
           data-html="true"
-          title="Edit Profile"
+          title="Dashboard"
         >
           <a
-            [routerLink]="['/admin/profile/edit-profile']"
+            [routerLink]="['/admin/estay']"
             routerLinkActive="router-link-active"
             ><i class="fa fa-cog"></i
           ></a>

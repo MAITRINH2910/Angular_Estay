@@ -28,7 +28,8 @@ export class HomeComponent implements OnInit {
     private cityService: CityService,
     private authService: AuthUserService,
     private routerService: Router,
-    private tokenStorage: TokenStorageService
+    private tokenStorage: TokenStorageService,
+
   ) {}
 
   async ngOnInit() {
@@ -39,7 +40,7 @@ export class HomeComponent implements OnInit {
     //     return true;
     //   }
     // }
-
+    
     this.cities = await this.cityService.getAllCities().toPromise();
     this.cities = this.cities.response;
 

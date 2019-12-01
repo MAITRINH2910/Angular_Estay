@@ -9,6 +9,7 @@ export class Hotel {
   link: string;
   name: string;
   price: number;
-  rating: string; 
+  rating: number;
   status: string;
+  
 }

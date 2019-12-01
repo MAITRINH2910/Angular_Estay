@@ -6,25 +6,31 @@ import {
   FormControl
 } from "@angular/forms";
 import { Router } from "@angular/router";
-import { Subscription } from "rxjs";
 
-import * as jwt_decode from "jwt-decode";
 import { AuthUserService } from "src/app/service/auth-user.service";
 import { HouseService } from "src/app/service/house.service";
 import { TokenStorageService } from "src/app/service/token-storage.service";
 import { Hotel } from "src/app/model/hotel.model";
+import { HttpHeaders } from "@angular/common/http";
 
 @Component({
-  selector: 'app-add-homestay',
-  templateUrl: './add-homestay.component.html',
-  styleUrls: ['./add-homestay.component.css']
+  selector: "app-add-homestay",
+  templateUrl: "./add-homestay.component.html",
+  styleUrls: ["./add-homestay.component.css"]
 })
 export class AddHomestayComponent implements OnInit {
-  sub: Subscription;
   submitted = false;
   loading = false;
   formAddHouse: FormGroup;
   hotel: Hotel;
+  public city: string;
+  public name: string;
+  public link: string;
+  public address: string;
+  public img: string;
+  public rating: number;
+  public price: number;
+
   constructor(
     private authService: AuthUserService,
     private formBuilder: FormBuilder,
@@ -32,6 +38,11 @@ export class AddHomestayComponent implements OnInit {
     private houseService: HouseService,
     private routerService: Router
   ) {}
+  headerConfig = {
+    headers: new HttpHeaders({
+      "user-access-token": window.localStorage.getItem("AuthToken")
+    })
+  };
 
   public noWhitespaceValidator(control: FormControl) {
     const isWhitespace = (control.value || "").trim().length === 0;
@@ -46,57 +57,44 @@ export class AddHomestayComponent implements OnInit {
 
   createForm() {
     this.formAddHouse = this.formBuilder.group({
-      title: ["", [Validators.required, this.noWhitespaceValidator]],
-      description: [""],
-      typeHouse: ["", [Validators.required]],
-      typeRoom: ["", [Validators.required]],
+      city: ["", [Validators.required, this.noWhitespaceValidator]],
+      name: ["", [Validators.required]],
+      link: [""],
+      img: ["", [Validators.required]],
       address: ["", [Validators.required, this.noWhitespaceValidator]],
-      bedRoomNumber: [
+      rating: [
         "",
         [Validators.required, Validators.pattern("^[1-9]{1}[0-9]*")]
       ],
-      bathRoomNumber: [
-        "",
-        [Validators.required, Validators.pattern("^[1-9]{1}[0-9]*")]
-      ],
-      pricePerNight: [
-        "",
-        [Validators.required, Validators.pattern("^[1-9]{1}[0-9]{5,11}")]
-      ],
-      pricePerMonth: [
-        "",
-        [Validators.required, Validators.pattern("^[1-9]{1}[0-9]{5,11}")]
-      ]
+      price: ["", [Validators.required, Validators.pattern("^[1-9]{1}[0-9]*")]]
     });
   }
 
   onSubmit() {
     this.submitted = true;
-    this.loading = false;
 
-    this.authService.getUser().subscribe(user => {
-      this.hotel.hotel_owner = user;
-      this.hotel.name = this.formAddHouse.value.name;
-      this.hotel.address = this.formAddHouse.value.address;
-      this.hotel.city = this.formAddHouse.value.city;
-      this.hotel.link = this.formAddHouse.value.link;
-      this.hotel.price = this.formAddHouse.value.price;
-      this.hotel.rating = this.formAddHouse.value.rating;
-      this.hotel.img = this.formAddHouse.value.img;
-      console.log(this.hotel);
-      this.sub = this.houseService.addHouse(this.hotel).subscribe(data => {
-        if (data && data.id) {
-          this.routerService.navigate(["host/property"]);
-        }
+    this.hotel.name = this.formAddHouse.value.name;
+    this.hotel.address = this.formAddHouse.value.address;
+    this.hotel.city = this.formAddHouse.value.city;
+    this.hotel.link = this.formAddHouse.value.link;
+    this.hotel.price = this.formAddHouse.value.price;
+    this.hotel.rating = this.formAddHouse.value.rating;
+    this.hotel.img = this.formAddHouse.value.img;
+    console.log(this.hotel.city);
+    this.houseService
+      .addHouse(
+        this.hotel.city,
+        this.hotel.name,
+        this.hotel.link,
+        this.hotel.img,
+        this.hotel.address,
+        this.hotel.rating,
+        this.hotel.price,
+        this.headerConfig
+      )
+      .subscribe(data => {
+        console.log(data);
+        
       });
-    });
-
-    console.log(jwt_decode(this.token.getToken()));
-  }
-
-  onDestroy() {
-    if (this.sub) {
-      this.sub.unsubscribe();
-    }
   }
 }

@@ -16,12 +16,10 @@ export class PreviewHomestayComponent implements OnInit {
   constructor(private houseService: HouseService, private authService: AuthUserService) { }
 
   ngOnInit() {
-    this.authService.getUser().subscribe(data=>{
-      let userId = data.id;
-      this.sub = this.houseService.getAllHousesByUserId(userId).subscribe((data: Hotel[])=> {
-        this.listHotel = data;
-      })
-    }) 
+    //  this.houseService.getAllHotelsByOwner(userId).subscribe(data=> {
+    //     this.listHotel = data;
+    //   })
+  
   }
 
   onDestroy() {

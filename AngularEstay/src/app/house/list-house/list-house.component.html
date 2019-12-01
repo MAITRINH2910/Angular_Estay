@@ -130,7 +130,7 @@
                               ><br>
                             </div>
                             <div class="col-sm-12">
-                              <button
+                              <button mat-raised-button [class.spinner]="loading" [disabled]="loading"
                                 type="submit"
                                 class="btn btn-block buttonTransparent"
                                 [disabled]="!form.valid"
@@ -241,3 +241,4 @@
         </div>
       </div>
     </section>
+    <!-- <ng4-loading-spinner> </ng4-loading-spinner> -->

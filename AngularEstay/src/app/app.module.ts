@@ -27,18 +27,13 @@ import { EditProfileComponent } from "./account_Admin/profile/edit-profile/edit-
 import { DashboardAdminComponent } from "./account_Admin/dashboard-admin/dashboard-admin.component";
 import { LayoutAdminComponent } from "./account_Admin/layout-admin/layout-admin.component";
 
-import { EditProfileUserComponent } from "./account_User/edit-profile-user/edit-profile-user.component";
-import { ProfileComponent } from "./account_User/profile/profile.component";
-import { BookingComponent } from "./account_User/booking/booking.component";
-import { DashboardUserComponent } from "./account_User/dashboard-user/dashboard-user.component";
-import { DeleteProfileUserComponent } from "./account_User/delete-profile-user/delete-profile-user.component";
-
 import { AddHomestayComponent } from "./account_Host/add-homestay/add-homestay.component";
 import { EditHomestayComponent } from "./account_Host/edit-homestay/edit-homestay.component";
 import { AllHostHomestayComponent } from "./account_Host/all-host-homestay/all-host-homestay.component";
 import { LayoutHostComponent } from "./account_Host/layout-host/layout-host.component";
 import { PreviewHomestayComponent } from "./account_Host/preview-homestay/preview-homestay.component";
 import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
+import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
 
 @NgModule({
   declarations: [
@@ -54,13 +49,8 @@ import { PageNotFoundComponent } from "./page-not-found/page-not-found.component
     PendingComponent,
     ViewProfileComponent,
     EditProfileComponent,
-    HouseDetailComponent,
-    ProfileComponent,
-    BookingComponent,
-    DashboardUserComponent,
-    PredictedHouseComponent,
-    EditProfileUserComponent,
-    DeleteProfileUserComponent,
+    HouseDetailComponent,   
+    PredictedHouseComponent,    
     PageNotFoundComponent,
     LayoutComponent,
     DashboardAdminComponent,
@@ -80,10 +70,9 @@ import { PageNotFoundComponent } from "./page-not-found/page-not-found.component
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    
+    Ng4LoadingSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [EditProfileUserComponent, DeleteProfileUserComponent]
 })
 export class AppModule {}

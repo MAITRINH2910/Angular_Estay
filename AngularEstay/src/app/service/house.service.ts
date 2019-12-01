@@ -1,7 +1,6 @@
 import { Injectable } from "@angular/core";
-import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { Observable } from "rxjs";
-import { url, httpOptions } from "src/app/shared/common/common";
+import { HttpClient } from "@angular/common/http";
+import { url } from "src/app/shared/common/common";
 import { Hotel } from "../model/hotel.model";
 
 @Injectable({
@@ -9,19 +8,15 @@ import { Hotel } from "../model/hotel.model";
 })
 export class HouseService {
   constructor(public http: HttpClient) {}
-  headerConfig = {
-    headers: new HttpHeaders({
-      "user-access-token": window.localStorage.getItem("AuthToken")
-    })
-  };
-  public addHotel(
+  
+  public addHouse(
     city: string,
     name: string,
     link: string,
     img: string,
     address: string,
     rating: number,
-    price: number
+    price: number, headerConfig
   ) {
     var obj = {
       city: city,
@@ -32,22 +27,22 @@ export class HouseService {
       rating: rating,
       price: price
     };
-    return this.http.post<Hotel>(`${url}/add_hotel`, obj, this.headerConfig);
+    return this.http.post<Hotel>(`${url}/hotels/add_hotel`, obj, headerConfig);
+  }
+ 
+  public getOneHotel(id: number, headerConfig) {
+    return this.http.get(`${url}/hotels/get_one_hotel/${id}`, headerConfig);
   }
 
-  public getOneHouse(id: number) {
-    return this.http.get<Hotel>(`${url}/house/${id}`, httpOptions);
+  public updateHotel(house: Hotel, headerConfig) {
+    return this.http.put(`${url}/hotels/update_hotel/${house.id}`, headerConfig);
   }
 
-  public editHouse(house: Hotel) {
-    return this.http.put(`${url}/house/${house.id}/edit`, httpOptions);
+  public deleteHotel(id:string, headerConfig) {
+    return this.http.delete(`${url}/hotels/delelete_hotel/${id}`, headerConfig);
   }
 
-  public deleteHotel(id:string) {
-    return this.http.post(`${url}/delelete_hotel/${id}`, this.headerConfig);
-  }
-
-  public getAllHousesByUserId(id: number) {
-    return this.http.get<Hotel[]>(`${url}/house/user/${id}`, httpOptions);
+  public getAllHotelsByOwner(headerConfig) {
+    return this.http.get(`${url}/hotels/get_all_hotels_of_owner`, headerConfig);
   }
 }

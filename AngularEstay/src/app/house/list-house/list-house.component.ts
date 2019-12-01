@@ -24,23 +24,16 @@ export class ListHouseComponent implements OnInit {
   public ratingValue: number;
   public priceValue: number;
   public params = new HttpParams();
-  public selectedListFeatureIds:  any = [];
+  public selectedListFeatureIds: any = [];
   public loading = false;
-
 
   constructor(
     private cityService: CityService,
     private formBuilder: FormBuilder,
-    private router: Router
+    private router: Router,
   ) {
     this.listFeature = this.cityService.listFeature;
 
-    // const controls = this.listFeature.map(c => new FormControl(false));
-    // controls[0].setValue(true);
-
-    // this.form = this.formBuilder.group({
-    //   listFeature: new FormArray(controls, minSelectedCheckboxes(1))
-    // });
     this.form = this.formBuilder.group({
       listFeature: new FormArray([], minSelectedCheckboxes(1))
     });
@@ -63,35 +56,39 @@ export class ListHouseComponent implements OnInit {
   }
   ngOnInit() {
     this.listFeature = this.cityService.listFeature;
-    console.log(this.listFeature);
     this.topHotel = this.cityService.topHotel;
-    console.log(this.topHotel);
     this.city = this.cityService.city;
-    console.log(this.city);
     this.rating(event);
     this.ratingValue = this.cityService.ratingValue;
     this.price(event);
     this.priceValue = this.cityService.priceValue;
   }
-  async submit() {  
+
+  async submit() {
+    this.loading = true;
     this.selectedListFeatureIds = this.form.value.listFeature
       .map((v, i) => (v ? this.listFeature[i] : null))
-      .filter(v => v !== null);    
+      .filter(v => v !== null);
 
-    console.log(this.selectedListFeatureIds); 
+    this.predictedHotel = await this.cityService
+      .getPredictedHotelByFeature(
+        this.city,
+        this.ratingValue,
+        this.priceValue,
+        this.selectedListFeatureIds
+      )
+      .toPromise();
 
-      this.predictedHotel = await this.cityService
-    .getPredictedHotelByFeature(this.city, this.ratingValue, this.priceValue, this.selectedListFeatureIds)
-    .toPromise();
-   
-  console.log(this.predictedHotel);
-  this.router.navigate(["/predicted-hotel"]);
+    console.log(this.predictedHotel);
+    this.cityService.predictedHotel = this.predictedHotel;
+    this.loading = false;
+    this.router.navigate(["/predicted-hotel"]);
   }
   ngOnDestroy() {
     this.cityService.listFeature = this.listFeature;
     this.cityService.topHotel = this.topHotel;
     this.cityService.city = this.city;
-    this.cityService.predictedHotel = this.predictedHotel;
+    // this.cityService.predictedHotel = this.predictedHotel;
   }
 }
 function minSelectedCheckboxes(min = 1) {

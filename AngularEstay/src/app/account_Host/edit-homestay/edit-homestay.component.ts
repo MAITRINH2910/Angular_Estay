@@ -13,6 +13,7 @@ import { AuthUserService } from "src/app/service/auth-user.service";
 import { HouseService } from "src/app/service/house.service";
 import { TokenStorageService } from "src/app/service/token-storage.service";
 import { Hotel } from "src/app/model/hotel.model";
+import { HttpHeaders } from '@angular/common/http';
 @Component({
   selector: 'app-edit-homestay',
   templateUrl: './edit-homestay.component.html',
@@ -31,7 +32,11 @@ export class EditHomestayComponent implements OnInit {
     private houseService: HouseService,
     private routerService: Router
   ) {}
-
+  headerConfig = {
+    headers: new HttpHeaders({
+      "user-access-token": window.localStorage.getItem("AuthToken")
+    })
+  };
   public noWhitespaceValidator(control: FormControl) {
     const isWhitespace = (control.value || "").trim().length === 0;
     const isValid = !isWhitespace;
@@ -39,7 +44,6 @@ export class EditHomestayComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.hotel = new Hotel();
     this.createForm();
   }
 
@@ -83,11 +87,7 @@ export class EditHomestayComponent implements OnInit {
       this.hotel.rating = this.formAddHouse.value.rating;
       this.hotel.img = this.formAddHouse.value.img;
       console.log(this.hotel);
-      this.sub = this.houseService.addHouse(this.hotel).subscribe(data => {
-        if (data && data.id) {
-          this.routerService.navigate(["host/property"]);
-        }
-      });
+   
     });
 
     console.log(jwt_decode(this.token.getToken()));

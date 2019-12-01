@@ -7,16 +7,12 @@ import { url } from "src/app/shared/common/common";
 })
 export class AdminService {
   public listHotelApi: string = url + "/hotels/get_all_hotels";
-  public listActiveHotelApi: string = url + "/hotels/get_all_hotels_active";
-  public listPendingHotelApi: string = url + "/hotels/get_all_hotels_pending";
+  public listActiveHotelApi: string = url + "/hotels/get_all_hotels_status/ACTIVE";
+  public listPendingHotelApi: string = url + "/hotels/get_all_hotels_status/INACTIVE";
   public listUserApi: string = url + "/users/get_all_user";
 
   constructor(public http: HttpClient) {}
-  headerConfig = {
-    headers: new HttpHeaders({
-      "user-access-token": window.localStorage.getItem("AuthToken")
-    })
-  };
+
 
   public getAllHotel(headerConfig) {
     return this.http.get(this.listHotelApi, headerConfig);
